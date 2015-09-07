@@ -1,0 +1,7 @@
+Benchmark                             Mode  Samples         Score  Score error  Units
+c.j.b.MapperBenchmark.dozer          thrpt        4     99208,765    30696,061  ops/s
+c.j.b.MapperBenchmark.manual         thrpt        4  15884795,954  1226236,254  ops/s
+c.j.b.MapperBenchmark.mapStruct      thrpt        4  13639924,895  1656543,383  ops/s
+c.j.b.MapperBenchmark.modelMapper    thrpt        4    292774,400    61034,248  ops/s
+c.j.b.MapperBenchmark.orika          thrpt        4   1253002,522   244669,569  ops/s
+c.j.b.MapperBenchmark.selma          thrpt        4  14903729,450  1160859,245  ops/s
