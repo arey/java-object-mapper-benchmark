@@ -31,6 +31,7 @@ It includes combinations which usually appear in Java Beans, such as:
 * Object types
 * Collections
 
+![Data model UML diagram](/model.png)
 
 ## Launch the benchmark ##
 
