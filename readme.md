@@ -9,7 +9,7 @@ This micro-benchmark compares performance of 5 frameworks. Results could be comp
 Benchmark are powered by a tool called [JMH](http://openjdk.java.net/projects/code-tools/jmh/) or also known as "Java Microbenchmarking Harness".
 JMH is developed by the OpenJDK team. 
 
-## Benchmarked object to object mapper frameworks ## 
+## Benchmarked object to object mapper frameworks ##
 
 - [Dozer](https://github.com/DozerMapper/dozer)
 - [MapStruct](http://mapstruct.org/)
