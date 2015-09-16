@@ -3,18 +3,22 @@ package com.javaetmoi.benchmark.mapping.mapper.orika;
 import com.javaetmoi.benchmark.mapping.mapper.OrderMapper;
 import com.javaetmoi.benchmark.mapping.model.dto.OrderDTO;
 import com.javaetmoi.benchmark.mapping.model.entity.Order;
-import ma.glasnost.orika.MapperFacade;
+import ma.glasnost.orika.BoundMapperFacade;
 import ma.glasnost.orika.MapperFactory;
 import ma.glasnost.orika.impl.DefaultMapperFactory;
-import ma.glasnost.orika.metadata.ClassMapBuilder;
 
+/**
+ * Using custom BoundMapperFacade with no object graph cycles.
+ *
+ * @see <a href="http://orika-mapper.github.io/orika-docs/performance-tuning.html">http://orika-mapper.github.io/orika-docs/performance-tuning.html</a>
+ */
 public class OrikaMapper implements OrderMapper {
 
-    private MapperFacade facade;
+    private BoundMapperFacade<Order, OrderDTO> orderMapper;
 
     public OrikaMapper() {
         MapperFactory factory = new DefaultMapperFactory.Builder().build();
-        factory.registerClassMap(ClassMapBuilder.map(Order.class, OrderDTO.class)
+        factory.registerClassMap(factory.classMap(Order.class, OrderDTO.class)
                 .field("customer.name", "customerName")
                 .field("customer.billingAddress.street",
                         "billingStreetAddress")
@@ -25,13 +29,12 @@ public class OrikaMapper implements OrderMapper {
                         "shippingCity")
                 .field("products", "products")
                 .toClassMap());
-        factory.build();
-        facade = factory.getMapperFacade();
+        orderMapper = factory.getMapperFacade(Order.class, OrderDTO.class, false);
     }
 
     @Override
     public OrderDTO map(Order source) {
-        return facade.map(source, OrderDTO.class);
+        return orderMapper.map(source);
     }
 };
 

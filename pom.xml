@@ -14,13 +14,14 @@
     </prerequisites>
 
     <properties>
-        <version.orkika>1.1.6</version.orkika>
+        <version.orkika>1.4.6</version.orkika>
         <version.dozer>5.3.2</version.dozer>
         <version.modelmapper>0.7.5</version.modelmapper>
         <version.mapstruct>1.0.0.CR2</version.mapstruct>
         <version.selma>0.12</version.selma>
         <version.jmh>1.0</version.jmh>
         <version.junit>4.12</version.junit>
+        <version.slf4j>1.7.12</version.slf4j>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <javac.target>1.6</javac.target>
@@ -76,6 +77,14 @@
             <version>${version.junit}</version>
             <scope>test</scope>
         </dependency>
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-nop</artifactId>
+            <version>${version.slf4j}</version>
+        </dependency>
+
+
     </dependencies>
 
     <build>
