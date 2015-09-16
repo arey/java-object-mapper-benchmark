@@ -1,14 +1,7 @@
 package com.javaetmoi.benchmark;
 
-import com.javaetmoi.benchmark.mapping.mapper.OrderMapper;
-import com.javaetmoi.benchmark.mapping.mapper.dozer.DozerMapper;
-import com.javaetmoi.benchmark.mapping.mapper.manual.ManualMapper;
-import com.javaetmoi.benchmark.mapping.mapper.mapstruct.MapStructMapper;
-import com.javaetmoi.benchmark.mapping.mapper.modelmapper.ModelMapper;
-import com.javaetmoi.benchmark.mapping.mapper.orika.OrikaMapper;
-import com.javaetmoi.benchmark.mapping.mapper.selma.SelmaMapper;
-import com.javaetmoi.benchmark.mapping.model.entity.Order;
-import com.javaetmoi.benchmark.mapping.model.entity.OrderFactory;
+import java.util.Collection;
+
 import org.openjdk.jmh.annotations.Benchmark;
 import org.openjdk.jmh.annotations.Scope;
 import org.openjdk.jmh.annotations.State;
@@ -19,7 +12,15 @@ import org.openjdk.jmh.runner.Runner;
 import org.openjdk.jmh.runner.options.Options;
 import org.openjdk.jmh.runner.options.OptionsBuilder;
 
-import java.util.Collection;
+import com.javaetmoi.benchmark.mapping.mapper.OrderMapper;
+import com.javaetmoi.benchmark.mapping.mapper.dozer.DozerMapper;
+import com.javaetmoi.benchmark.mapping.mapper.manual.ManualMapper;
+import com.javaetmoi.benchmark.mapping.mapper.mapstruct.MapStructMapper;
+import com.javaetmoi.benchmark.mapping.mapper.modelmapper.ModelMapper;
+import com.javaetmoi.benchmark.mapping.mapper.orika.OrikaBoundMapper;
+import com.javaetmoi.benchmark.mapping.mapper.orika.OrikaMapper;
+import com.javaetmoi.benchmark.mapping.mapper.selma.SelmaMapper;
+import com.javaetmoi.benchmark.mapping.model.entity.OrderFactory;
 
 @State(Scope.Benchmark)
 public class MapperBenchmark {
@@ -27,6 +28,8 @@ public class MapperBenchmark {
     private OrderMapper dozerMapper = new DozerMapper();
 
     private OrderMapper orikaMapper = new OrikaMapper();
+
+    private OrderMapper orikaBoundMapper = new OrikaBoundMapper();
 
     private OrderMapper modelMapper = new ModelMapper();
 
@@ -44,6 +47,11 @@ public class MapperBenchmark {
     @Benchmark
     public void orika() {
         orikaMapper.map(OrderFactory.buildOrder());
+    }
+
+    @Benchmark
+    public void orikaBound() {
+        orikaBoundMapper.map(OrderFactory.buildOrder());
     }
 
     @Benchmark

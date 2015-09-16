@@ -14,7 +14,7 @@
     </prerequisites>
 
     <properties>
-        <version.orkika>1.1.6</version.orkika>
+        <version.orkika>1.4.6</version.orkika>
         <version.dozer>5.3.2</version.dozer>
         <version.modelmapper>0.7.5</version.modelmapper>
         <version.mapstruct>1.0.0.CR2</version.mapstruct>

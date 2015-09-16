@@ -18,7 +18,7 @@ public class OrderFactory {
         customer.setShippingAddress(shippingAddress);
         shippingAddress.setStreet("1234 West Townsend");
         shippingAddress.setCity("Boston");
-        List products = new ArrayList<Product>(2);
+        List<Product> products = new ArrayList<Product>(2);
         order.setProducts(products);
         products.add(new Product("socks"));
         products.add(new Product("shoes"));
