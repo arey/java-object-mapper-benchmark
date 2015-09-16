@@ -80,6 +80,10 @@ Legend : Higher score is better
 
 Total time: 00:49:01
 
+## Documentation ##
+
+* [Micro-benchmark of Java mapping object frameworks](http://javaetmoi.com/2015/09/benchmark-frameworks-java-mapping-objet/) (french article)
+
 
 ## Credits ##
 
