@@ -57,28 +57,28 @@ Tests has been performed on:
         <th>Benchmark</th><th>Mode</th><th>Samples</th><th>Score</th><th>Margin error (+/-)</th><th>Units</th>
     </tr>
     <tr>
-        <th>Manual</th><td>thrpt</td><td>200</td><td>15602264,077</td><td>176798,794</td><td>ops/s</td>
+        <th>Manual</th><td>thrpt</td><td>200</td><td>17 277 097</td><td>146 095</td><td>ops/s</td>
     </tr>
     <tr>
-        <th>Selma</th><td>thrpt</td><td>200</td><td>15108316,124</td><td>223022,246</td><td>ops/s</td>
+        <th>Selma</th><td>thrpt</td><td>200</td><td>17 132 979</td><td>38 209</td><td>ops/s</td>
     </tr>
     <tr>        
-        <th>MapStruct</th><td>thrpt</td><td>200</td><td>13964817,329</td><td>154926,906</td><td>ops/s</td>
+        <th>MapStruct</th><td>thrpt</td><td>200</td><td>14 493 144</td><td>67 522</td><td>ops/s</td>
     </tr>
     <tr>
-        <th>Orika</th><td>thrpt</td><td>200</td><td>1356290,897</td><td>4497,700</td><td>ops/s</td>
+        <th>Orika</th><td>thrpt</td><td>200</td><td>3 283 557</td><td>16 706</td><td>ops/s</td>
     </tr>
     <tr>       
-        <th>ModelMaper</th><td>thrpt</td><td>200</td><td>278718,964</td><td>2328,241</td><td>ops/s</td>
+        <th>ModelMaper</th><td>thrpt</td><td>200</td><td>282 039</td><td>2 176</td><td>ops/s</td>
     </tr>
     <tr>
-        <th>Dozer</th><td>thrpt</td><td>200</td><td>104518,910</td><td>979,080</td><td>ops/s</td>
+        <th>Dozer</th><td>thrpt</td><td>200</td><td>103 006</td><td>1 362</td><td>ops/s</td>
     </tr>
 </table>
 
 Legend : Higher score is better
 
-Total time: 00:49:01
+Total time: 00:49:06
 
 ## Documentation ##
 
