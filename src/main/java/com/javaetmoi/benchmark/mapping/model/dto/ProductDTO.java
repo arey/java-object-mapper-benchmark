@@ -1,7 +1,8 @@
 package com.javaetmoi.benchmark.mapping.model.dto;
 
 public class ProductDTO {
-    private String name;
+    
+	private String name;
 
     public ProductDTO() {
 

@@ -1,14 +1,7 @@
 package com.javaetmoi.benchmark;
 
-import com.javaetmoi.benchmark.mapping.mapper.OrderMapper;
-import com.javaetmoi.benchmark.mapping.mapper.dozer.DozerMapper;
-import com.javaetmoi.benchmark.mapping.mapper.manual.ManualMapper;
-import com.javaetmoi.benchmark.mapping.mapper.mapstruct.MapStructMapper;
-import com.javaetmoi.benchmark.mapping.mapper.modelmapper.ModelMapper;
-import com.javaetmoi.benchmark.mapping.mapper.orika.OrikaMapper;
-import com.javaetmoi.benchmark.mapping.mapper.selma.SelmaMapper;
-import com.javaetmoi.benchmark.mapping.model.entity.Order;
-import com.javaetmoi.benchmark.mapping.model.entity.OrderFactory;
+import java.util.Collection;
+
 import org.openjdk.jmh.annotations.Benchmark;
 import org.openjdk.jmh.annotations.Scope;
 import org.openjdk.jmh.annotations.State;
@@ -19,7 +12,15 @@ import org.openjdk.jmh.runner.Runner;
 import org.openjdk.jmh.runner.options.Options;
 import org.openjdk.jmh.runner.options.OptionsBuilder;
 
-import java.util.Collection;
+import com.javaetmoi.benchmark.mapping.mapper.OrderMapper;
+import com.javaetmoi.benchmark.mapping.mapper.dozer.DozerMapper;
+import com.javaetmoi.benchmark.mapping.mapper.jmapper.JMapperMapper;
+import com.javaetmoi.benchmark.mapping.mapper.manual.ManualMapper;
+import com.javaetmoi.benchmark.mapping.mapper.mapstruct.MapStructMapper;
+import com.javaetmoi.benchmark.mapping.mapper.modelmapper.ModelMapper;
+import com.javaetmoi.benchmark.mapping.mapper.orika.OrikaMapper;
+import com.javaetmoi.benchmark.mapping.mapper.selma.SelmaMapper;
+import com.javaetmoi.benchmark.mapping.model.entity.OrderFactory;
 
 @State(Scope.Benchmark)
 public class MapperBenchmark {
@@ -34,6 +35,8 @@ public class MapperBenchmark {
 
     private OrderMapper selmaMapper = new SelmaMapper();
 
+    private OrderMapper jmapperMapper = new JMapperMapper();
+    
     private OrderMapper manualMapper = new ManualMapper();
 
     @Benchmark
@@ -62,6 +65,11 @@ public class MapperBenchmark {
     }
 
     @Benchmark
+    public void jmapper() {
+        jmapperMapper.map(OrderFactory.buildOrder());
+    }
+    
+    @Benchmark
     public void manual() {
         manualMapper.map(OrderFactory.buildOrder());
     }
@@ -78,7 +86,7 @@ public class MapperBenchmark {
 
         Collection<RunResult> results = new Runner(opts).run();
         for (RunResult result : results) {
-            Result r = result.getPrimaryResult();
+            Result<?> r = result.getPrimaryResult();
             System.out.println("API replied benchmark score: "
                     + r.getScore() + " "
                     + r.getScoreUnit() + " over "

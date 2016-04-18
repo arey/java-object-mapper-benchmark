@@ -1,6 +1,5 @@
 package com.javaetmoi.benchmark.mapping.model.entity;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Order {

@@ -3,7 +3,8 @@ package com.javaetmoi.benchmark.mapping.model.dto;
 import java.util.List;
 
 public class OrderDTO {
-    private List<ProductDTO> products;
+
+	private List<ProductDTO> products;
     String customerName;
     private String shippingStreetAddress;
     private String shippingCity;
