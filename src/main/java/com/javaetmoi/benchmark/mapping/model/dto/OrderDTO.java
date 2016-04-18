@@ -2,12 +2,19 @@ package com.javaetmoi.benchmark.mapping.model.dto;
 
 import java.util.List;
 
+import com.googlecode.jmapper.annotations.JMap;
+
 public class OrderDTO {
+	@JMap
     private List<ProductDTO> products;
     String customerName;
+    @JMap("customer.shippingAddress.street")
     private String shippingStreetAddress;
+    @JMap("customer.shippingAddress.city")
     private String shippingCity;
+    @JMap("customer.billingAddress.street")
     private String billingStreetAddress;
+    @JMap("customer.billingAddress.city")
     private String billingCity;
 
     public String getCustomerName() {

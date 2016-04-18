@@ -19,6 +19,7 @@
         <version.modelmapper>0.7.5</version.modelmapper>
         <version.mapstruct>1.0.0.CR2</version.mapstruct>
         <version.selma>0.12</version.selma>
+        <version.jmapper>1.6.0</version.jmapper>
         <version.jmh>1.0</version.jmh>
         <version.junit>4.12</version.junit>
         <version.slf4j>1.7.12</version.slf4j>
@@ -70,6 +71,12 @@
             <artifactId>selma</artifactId>
             <version>${version.selma}</version>
         </dependency>
+         
+        <dependency>
+		    <groupId>com.googlecode.jmapper-framework</groupId>
+		    <artifactId>jmapper-core</artifactId>
+		    <version>${version.jmapper}</version>
+		</dependency>
 
         <dependency>
             <groupId>junit</groupId>
