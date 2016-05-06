@@ -16,6 +16,7 @@ JMH is developed by the OpenJDK team.
 - [ModelMapper](http://modelmapper.org/)
 - [Selma](http://www.selma-java.org/)
 - [Orika](https://github.com/orika-mapper/orika)
+- [JMapper](https://github.com/jmapper-framework/jmapper-core)
 
 ## Contributing to benchmark ##
 
@@ -57,28 +58,31 @@ Tests has been performed on:
         <th>Benchmark</th><th>Mode</th><th>Samples</th><th>Score</th><th>Margin error (+/-)</th><th>Units</th>
     </tr>
     <tr>
-        <th>Manual</th><td>thrpt</td><td>200</td><td>17 277 097</td><td>146 095</td><td>ops/s</td>
+        <th>Manual</th><td>thrpt</td><td>200</td><td>18 011 314</td><td>86 911</td><td>ops/s</td>
     </tr>
     <tr>
-        <th>Selma</th><td>thrpt</td><td>200</td><td>17 132 979</td><td>38 209</td><td>ops/s</td>
+        <th>Selma</th><td>thrpt</td><td>200</td><td>16 701 231</td><td>67 549</td><td>ops/s</td>
     </tr>
     <tr>        
-        <th>MapStruct</th><td>thrpt</td><td>200</td><td>14 493 144</td><td>67 522</td><td>ops/s</td>
+        <th>MapStruct</th><td>thrpt</td><td>200</td><td>15 432 613</td><td>73 949</td><td>ops/s</td>
     </tr>
     <tr>
-        <th>Orika</th><td>thrpt</td><td>200</td><td>3 283 557</td><td>16 706</td><td>ops/s</td>
+        <th>JMapper</th><td>thrpt</td><td>200</td><td>14 588 635</td><td>102 968</td><td>ops/s</td>
+    </tr>
+    <tr>
+        <th>Orika</th><td>thrpt</td><td>200</td><td>3 409 188</td><td>32 312</td><td>ops/s</td>
     </tr>
     <tr>       
-        <th>ModelMaper</th><td>thrpt</td><td>200</td><td>282 039</td><td>2 176</td><td>ops/s</td>
+        <th>ModelMaper</th><td>thrpt</td><td>200</td><td>294 725</td><td>2 478</td><td>ops/s</td>
     </tr>
     <tr>
-        <th>Dozer</th><td>thrpt</td><td>200</td><td>103 006</td><td>1 362</td><td>ops/s</td>
+        <th>Dozer</th><td>thrpt</td><td>200</td><td>102 782</td><td>969</td><td>ops/s</td>
     </tr>
 </table>
 
 Legend : Higher score is better
 
-Total time: 00:49:06
+Total time: 00:57:44
 
 ## Documentation ##
 
