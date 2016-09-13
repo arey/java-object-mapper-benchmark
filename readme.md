@@ -48,41 +48,41 @@ _Pre-requisites: Maven 3.x and a JDK 6 (or above)_
 
 Tests has been performed on:
 
-* OS: MacOSX
-* CPU: Core i7 2.8GHz 6MB cache × 4 cores
-* RAM: 16GB
-* JVM: Oracle 1.8.0_25 64 bits
+* OS: OS X El Capitan
+* CPU: 3.1 GHz Intel Core i7, 2 cores, L2 Cache (per Core): 256 KB,  L3 Cache: 4 MB
+* RAM: 16 GB 1867 MHz DDR3
+* JVM: Oracle 1.8.0_102 64 bits
 
 <table>
     <tr>
         <th>Benchmark</th><th>Mode</th><th>Samples</th><th>Score</th><th>Margin error (+/-)</th><th>Units</th>
     </tr>
     <tr>
-        <th>Manual</th><td>thrpt</td><td>200</td><td>18 011 314</td><td>86 911</td><td>ops/s</td>
+        <th>Manual</th><td>thrpt</td><td>200</td><td>16 466 105</td><td>48 380</td><td>ops/s</td>
     </tr>
     <tr>
-        <th>Selma</th><td>thrpt</td><td>200</td><td>16 701 231</td><td>67 549</td><td>ops/s</td>
+        <th>Selma</th><td>thrpt</td><td>200</td><td>15 123 857</td><td>28 828</td><td>ops/s</td>
     </tr>
     <tr>        
-        <th>MapStruct</th><td>thrpt</td><td>200</td><td>15 432 613</td><td>73 949</td><td>ops/s</td>
+        <th>MapStruct</th><td>thrpt</td><td>200</td><td>14 222 424</td><td>26 625</td><td>ops/s</td>
     </tr>
     <tr>
-        <th>JMapper</th><td>thrpt</td><td>200</td><td>14 588 635</td><td>102 968</td><td>ops/s</td>
+        <th>JMapper</th><td>thrpt</td><td>200</td><td>14 213 331</td><td>39 890</td><td>ops/s</td>
     </tr>
     <tr>
-        <th>Orika</th><td>thrpt</td><td>200</td><td>3 409 188</td><td>32 312</td><td>ops/s</td>
+        <th>Orika</th><td>thrpt</td><td>200</td><td>3 002 845</td><td>13 463</td><td>ops/s</td>
     </tr>
     <tr>       
-        <th>ModelMaper</th><td>thrpt</td><td>200</td><td>294 725</td><td>2 478</td><td>ops/s</td>
+        <th>ModelMaper</th><td>thrpt</td><td>200</td><td>259 133</td><td>1 166</td><td>ops/s</td>
     </tr>
     <tr>
-        <th>Dozer</th><td>thrpt</td><td>200</td><td>102 782</td><td>969</td><td>ops/s</td>
+        <th>Dozer</th><td>thrpt</td><td>200</td><td>98 039</td><td>259</td><td>ops/s</td>
     </tr>
 </table>
 
 Legend : Higher score is better
 
-Total time: 00:57:44
+Total time: 00:58:05
 
 ## Documentation ##
 
