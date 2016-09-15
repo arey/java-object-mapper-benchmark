@@ -4,7 +4,7 @@ Multi-layered applications often require to map between different object models 
 Writing such boiler plate mapping code is a tedious and error-prone task.
 A lot of object-to-object mapping Java frameworks aims to simplify this work and automate it.
 Some uses code instrospection (eg. Dozer). Other uses code generation (ex: MapStuct).
-This micro-benchmark compares performance of 5 frameworks. Results could be compared to the benchmark of a code written manually. 
+This micro-benchmark compares performance of 6 frameworks. Results could be compared to the benchmark of a code written manually. 
 
 Benchmark are powered by a tool called [JMH](http://openjdk.java.net/projects/code-tools/jmh/) or also known as "Java Microbenchmarking Harness".
 JMH is developed by the OpenJDK team. 
@@ -58,31 +58,31 @@ Tests has been performed on:
         <th>Benchmark</th><th>Mode</th><th>Samples</th><th>Score</th><th>Margin error (+/-)</th><th>Units</th>
     </tr>
     <tr>
-        <th>Manual</th><td>thrpt</td><td>200</td><td>16 466 105</td><td>48 380</td><td>ops/s</td>
+        <th>Manual</th><td>thrpt</td><td>200</td><td>16 449 065</td><td>53 680</td><td>ops/s</td>
     </tr>
     <tr>
-        <th>Selma</th><td>thrpt</td><td>200</td><td>15 123 857</td><td>28 828</td><td>ops/s</td>
+        <th>Selma</th><td>thrpt</td><td>200</td><td>15 806 337</td><td>41 094</td><td>ops/s</td>
     </tr>
     <tr>        
-        <th>MapStruct</th><td>thrpt</td><td>200</td><td>14 222 424</td><td>26 625</td><td>ops/s</td>
+        <th>MapStruct</th><td>thrpt</td><td>200</td><td>14 237 194</td><td>51 179</td><td>ops/s</td>
     </tr>
     <tr>
-        <th>JMapper</th><td>thrpt</td><td>200</td><td>14 213 331</td><td>39 890</td><td>ops/s</td>
+        <th>JMapper</th><td>thrpt</td><td>200</td><td>13 960 300</td><td>58 236</td><td>ops/s</td>
     </tr>
     <tr>
-        <th>Orika</th><td>thrpt</td><td>200</td><td>3 002 845</td><td>13 463</td><td>ops/s</td>
+        <th>Orika</th><td>thrpt</td><td>200</td><td>3 014 113</td><td>14 411</td><td>ops/s</td>
     </tr>
     <tr>       
-        <th>ModelMaper</th><td>thrpt</td><td>200</td><td>259 133</td><td>1 166</td><td>ops/s</td>
+        <th>ModelMaper</th><td>thrpt</td><td>200</td><td>246 365</td><td>2 019</td><td>ops/s</td>
     </tr>
     <tr>
-        <th>Dozer</th><td>thrpt</td><td>200</td><td>98 039</td><td>259</td><td>ops/s</td>
+        <th>Dozer</th><td>thrpt</td><td>200</td><td>78 140</td><td>349</td><td>ops/s</td>
     </tr>
 </table>
 
 Legend : Higher score is better
 
-Total time: 00:58:05
+Total time: 00:48:33
 
 ## Documentation ##
 

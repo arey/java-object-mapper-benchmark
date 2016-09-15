@@ -14,15 +14,15 @@
     </prerequisites>
 
     <properties>
-        <version.orkika>1.4.6</version.orkika>
-        <version.dozer>5.3.2</version.dozer>
-        <version.modelmapper>0.7.5</version.modelmapper>
-        <version.mapstruct>1.0.0.CR2</version.mapstruct>
-        <version.selma>0.12</version.selma>
-        <version.jmapper>1.6.0</version.jmapper>
-        <version.jmh>1.0</version.jmh>
+        <version.orika>1.4.6</version.orika>
+        <version.dozer>5.5.1</version.dozer>
+        <version.modelmapper>0.7.6</version.modelmapper>
+        <version.mapstruct>1.0.0.Final</version.mapstruct>
+        <version.selma>0.15</version.selma>
+        <version.jmapper>1.6.0.1</version.jmapper>
+        <version.jmh>1.14</version.jmh>
         <version.junit>4.12</version.junit>
-        <version.slf4j>1.7.12</version.slf4j>
+        <version.slf4j>1.7.21</version.slf4j>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <javac.target>1.6</javac.target>
@@ -45,7 +45,7 @@
         <dependency>
             <groupId>ma.glasnost.orika</groupId>
             <artifactId>orika-core</artifactId>
-            <version>${version.orkika}</version>
+            <version>${version.orika}</version>
         </dependency>
 
         <dependency>
@@ -65,18 +65,29 @@
             <artifactId>mapstruct</artifactId>
             <version>${version.mapstruct}</version>
         </dependency>
+        <dependency>
+            <groupId>org.mapstruct</groupId>
+            <artifactId>mapstruct-processor</artifactId>
+            <version>${version.mapstruct}</version>
+        </dependency>
 
         <dependency>
             <groupId>fr.xebia.extras</groupId>
             <artifactId>selma</artifactId>
             <version>${version.selma}</version>
         </dependency>
+        <dependency>
+            <groupId>fr.xebia.extras</groupId>
+            <artifactId>selma-processor</artifactId>
+            <version>${version.selma}</version>
+            <scope>provided</scope>
+        </dependency>
          
         <dependency>
-		    <groupId>com.googlecode.jmapper-framework</groupId>
-		    <artifactId>jmapper-core</artifactId>
-		    <version>${version.jmapper}</version>
-		</dependency>
+            <groupId>com.googlecode.jmapper-framework</groupId>
+            <artifactId>jmapper-core</artifactId>
+            <version>${version.jmapper}</version>
+        </dependency>
 
         <dependency>
             <groupId>junit</groupId>
@@ -90,8 +101,6 @@
             <artifactId>slf4j-nop</artifactId>
             <version>${version.slf4j}</version>
         </dependency>
-
-
     </dependencies>
 
     <build>
@@ -124,45 +133,23 @@
                                     <mainClass>org.openjdk.jmh.Main</mainClass>
                                 </transformer>
                             </transformers>
+                            <filters>
+                                <filter>
+                                    <!--
+                                        Shading signed JARs will fail without this.
+                                        http://stackoverflow.com/questions/999489/invalid-signature-file-when-attempting-to-run-a-jar
+                                    -->
+                                    <artifact>*:*</artifact>
+                                    <excludes>
+                                        <exclude>META-INF/*.SF</exclude>
+                                        <exclude>META-INF/*.DSA</exclude>
+                                        <exclude>META-INF/*.RSA</exclude>
+                                    </excludes>
+                                </filter>
+                            </filters>
                         </configuration>
                     </execution>
                 </executions>
-            </plugin>
-
-            <plugin>
-                <groupId>org.bsc.maven</groupId>
-                <artifactId>maven-processor-plugin</artifactId>
-                <version>2.2.3</version>
-                <configuration>
-                    <defaultOutputDirectory>
-                        ${project.build.directory}/generated-sources
-                    </defaultOutputDirectory>
-                    <processors>
-                        <processor>org.mapstruct.ap.MappingProcessor</processor>
-                        <processor>fr.xebia.extras.selma.codegen.MapperProcessor</processor>
-                    </processors>
-                </configuration>
-                <executions>
-                    <execution>
-                        <id>process</id>
-                        <phase>generate-sources</phase>
-                        <goals>
-                            <goal>process</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <dependencies>
-                    <dependency>
-                        <groupId>org.mapstruct</groupId>
-                        <artifactId>mapstruct-processor</artifactId>
-                        <version>${version.mapstruct}</version>
-                    </dependency>
-                    <dependency>
-                        <groupId>fr.xebia.extras</groupId>
-                        <artifactId>selma-processor</artifactId>
-                        <version>${version.selma}</version>
-                    </dependency>
-                </dependencies>
             </plugin>
         </plugins>
         <pluginManagement>
