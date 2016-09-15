@@ -4,7 +4,7 @@ Multi-layered applications often require to map between different object models 
 Writing such boiler plate mapping code is a tedious and error-prone task.
 A lot of object-to-object mapping Java frameworks aims to simplify this work and automate it.
 Some uses code instrospection (eg. Dozer). Other uses code generation (ex: MapStuct).
-This micro-benchmark compares performance of 5 frameworks. Results could be compared to the benchmark of a code written manually. 
+This micro-benchmark compares performance of 6 frameworks. Results could be compared to the benchmark of a code written manually. 
 
 Benchmark are powered by a tool called [JMH](http://openjdk.java.net/projects/code-tools/jmh/) or also known as "Java Microbenchmarking Harness".
 JMH is developed by the OpenJDK team. 
@@ -67,7 +67,7 @@ Tests has been performed on:
         <th>MapStruct</th><td>thrpt</td><td>200</td><td>14 237 194</td><td>51 179</td><td>ops/s</td>
     </tr>
     <tr>
-        <th>JMapper</th><td>thrpt</td><td>200</td><td>14 213 331</td><td>39 890</td><td>ops/s</td>
+        <th>JMapper</th><td>thrpt</td><td>200</td><td>13 960 300</td><td>58 236</td><td>ops/s</td>
     </tr>
     <tr>
         <th>Orika</th><td>thrpt</td><td>200</td><td>3 014 113</td><td>14 411</td><td>ops/s</td>
