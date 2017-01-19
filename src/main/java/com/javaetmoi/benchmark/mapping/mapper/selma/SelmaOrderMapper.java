@@ -13,7 +13,7 @@ import fr.xebia.extras.selma.Mapper;
                 @Field({"customer.billingAddress.street", "billingStreetAddress"}),
                 @Field({"customer.billingAddress.city", "billingCity"}),
                 @Field({"customer.shippingAddress.street", "shippingStreetAddress"}),
-                @Field({"customer.shippingAddress.city", "shippingCity"}))
+                @Field({"customer.shippingAddress.city", "shippingCity"})
         }
 )
 public interface SelmaOrderMapper {
