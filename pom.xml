@@ -14,15 +14,15 @@
     </prerequisites>
 
     <properties>
-        <version.orika>1.4.6</version.orika>
+        <version.orika>1.5.0</version.orika>
         <version.dozer>5.5.1</version.dozer>
-        <version.modelmapper>0.7.6</version.modelmapper>
-        <version.mapstruct>1.0.0.Final</version.mapstruct>
+        <version.modelmapper>0.7.7</version.modelmapper>
+        <version.mapstruct>1.1.0.Final</version.mapstruct>
         <version.selma>0.15</version.selma>
-        <version.jmapper>1.6.0.1</version.jmapper>
-        <version.jmh>1.14</version.jmh>
+        <version.jmapper>1.6.1.CR2</version.jmapper>
+        <version.jmh>1.17.4</version.jmh>
         <version.junit>4.12</version.junit>
-        <version.slf4j>1.7.21</version.slf4j>
+        <version.slf4j>1.7.22</version.slf4j>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <javac.target>1.6</javac.target>
