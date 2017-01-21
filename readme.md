@@ -48,35 +48,35 @@ _Pre-requisites: Maven 3.x and a JDK 6 (or above)_
 
 Tests has been performed on:
 
-* OS: OS X El Capitan
+* OS: macOS Seria
 * CPU: 3.1 GHz Intel Core i7, 2 cores, L2 Cache (per Core): 256 KB,  L3 Cache: 4 MB
 * RAM: 16 GB 1867 MHz DDR3
-* JVM: Oracle 1.8.0_102 64 bits
+* JVM: Oracle 1.8.0_74-b02 64 bits
 
 <table>
     <tr>
         <th>Benchmark</th><th>Mode</th><th>Samples</th><th>Score</th><th>Margin error (+/-)</th><th>Units</th>
     </tr>
     <tr>
-        <th>Manual</th><td>thrpt</td><td>200</td><td>16 449 065</td><td>53 680</td><td>ops/s</td>
+        <th>Manual</th><td>thrpt</td><td>200</td><td>16 262 690</td><td>74 221</td><td>ops/s</td>
     </tr>
     <tr>
-        <th>Selma</th><td>thrpt</td><td>200</td><td>15 806 337</td><td>41 094</td><td>ops/s</td>
+        <th>Selma</th><td>thrpt</td><td>200</td><td>15 773 717</td><td>99 740</td><td>ops/s</td>
     </tr>
     <tr>        
-        <th>MapStruct</th><td>thrpt</td><td>200</td><td>14 237 194</td><td>51 179</td><td>ops/s</td>
+        <th>MapStruct</th><td>thrpt</td><td>200</td><td>14 518 416</td><td>179 884</td><td>ops/s</td>
     </tr>
     <tr>
-        <th>JMapper</th><td>thrpt</td><td>200</td><td>13 960 300</td><td>58 236</td><td>ops/s</td>
+        <th>JMapper</th><td>thrpt</td><td>200</td><td>14 492 381</td><td>82 798</td><td>ops/s</td>
     </tr>
     <tr>
-        <th>Orika</th><td>thrpt</td><td>200</td><td>3 014 113</td><td>14 411</td><td>ops/s</td>
+        <th>Orika</th><td>thrpt</td><td>200</td><td>3 550 464</td><td>30 533</td><td>ops/s</td>
     </tr>
     <tr>       
-        <th>ModelMaper</th><td>thrpt</td><td>200</td><td>246 365</td><td>2 019</td><td>ops/s</td>
+        <th>ModelMaper</th><td>thrpt</td><td>200</td><td>256 959</td><td>2 413</td><td>ops/s</td>
     </tr>
     <tr>
-        <th>Dozer</th><td>thrpt</td><td>200</td><td>78 140</td><td>349</td><td>ops/s</td>
+        <th>Dozer</th><td>thrpt</td><td>200</td><td>86 607</td><td>488</td><td>ops/s</td>
     </tr>
 </table>
 
