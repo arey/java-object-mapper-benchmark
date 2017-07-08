@@ -58,25 +58,25 @@ Tests has been performed on:
         <th>Benchmark</th><th>Mode</th><th>Samples</th><th>Score</th><th>Margin error (+/-)</th><th>Units</th>
     </tr>
     <tr>
-        <th>Manual</th><td>thrpt</td><td>200</td><td>16 262 690</td><td>74 221</td><td>ops/s</td>
+        <th>Manual</th><td>thrpt</td><td>200</td><td>18 076 665</td><td>77 789</td><td>ops/s</td>
     </tr>
     <tr>
-        <th>Selma</th><td>thrpt</td><td>200</td><td>15 773 717</td><td>99 740</td><td>ops/s</td>
+        <th>Selma</th><td>thrpt</td><td>200</td><td>16 839 320</td><td>52 403</td><td>ops/s</td>
     </tr>
     <tr>        
-        <th>MapStruct</th><td>thrpt</td><td>200</td><td>14 518 416</td><td>179 884</td><td>ops/s</td>
+        <th>MapStruct</th><td>thrpt</td><td>200</td><td>15 580 286</td><td>72 688</td><td>ops/s</td>
     </tr>
     <tr>
-        <th>JMapper</th><td>thrpt</td><td>200</td><td>14 492 381</td><td>82 798</td><td>ops/s</td>
+        <th>JMapper</th><td>thrpt</td><td>200</td><td>15 355 310</td><td>149 259</td><td>ops/s</td>
     </tr>
     <tr>
-        <th>Orika</th><td>thrpt</td><td>200</td><td>3 550 464</td><td>30 533</td><td>ops/s</td>
+        <th>Orika</th><td>thrpt</td><td>200</td><td>3 876 966</td><td>17 939</td><td>ops/s</td>
     </tr>
     <tr>       
-        <th>ModelMaper</th><td>thrpt</td><td>200</td><td>256 959</td><td>2 413</td><td>ops/s</td>
+        <th>ModelMaper</th><td>thrpt</td><td>200</td><td>279 279</td><td>1 133</td><td>ops/s</td>
     </tr>
     <tr>
-        <th>Dozer</th><td>thrpt</td><td>200</td><td>86 607</td><td>488</td><td>ops/s</td>
+        <th>Dozer</th><td>thrpt</td><td>200</td><td>87 928</td><td>665</td><td>ops/s</td>
     </tr>
 </table>
 
