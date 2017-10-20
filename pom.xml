@@ -14,10 +14,10 @@
     </prerequisites>
 
     <properties>
-        <version.orika>1.5.1</version.orika>
+        <version.orika>1.5.2</version.orika>
         <version.dozer>5.5.1</version.dozer>
         <version.modelmapper>1.1.0</version.modelmapper>
-        <version.mapstruct>1.1.0.Final</version.mapstruct>
+        <version.mapstruct>1.2.0.Final</version.mapstruct>
         <version.selma>1.0</version.selma>
         <version.jmapper>1.6.1.CR2</version.jmapper>
         <version.jmh>1.19</version.jmh>
