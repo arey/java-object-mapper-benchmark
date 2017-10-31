@@ -15,7 +15,7 @@
 
     <properties>
         <version.orika>1.5.2</version.orika>
-        <version.dozer>5.5.1</version.dozer>
+        <version.dozer>6.1.0</version.dozer>
         <version.modelmapper>1.1.0</version.modelmapper>
         <version.mapstruct>1.2.0.Final</version.mapstruct>
         <version.selma>1.0</version.selma>
@@ -49,8 +49,8 @@
         </dependency>
 
         <dependency>
-            <groupId>net.sf.dozer</groupId>
-            <artifactId>dozer</artifactId>
+            <groupId>com.github.dozermapper</groupId>
+            <artifactId>dozer-core</artifactId>
             <version>${version.dozer}</version>
         </dependency>
 
@@ -99,6 +99,12 @@
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-nop</artifactId>
+            <version>${version.slf4j}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>jcl-over-slf4j</artifactId>
             <version>${version.slf4j}</version>
         </dependency>
     </dependencies>
