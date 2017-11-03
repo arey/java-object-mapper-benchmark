@@ -48,7 +48,7 @@ _Pre-requisites: Maven 3.x and a JDK 6 (or above)_
 
 Tests has been performed on:
 
-* OS: macOS Seria
+* OS: macOS Sierra
 * CPU: 3.1 GHz Intel Core i7, 2 cores, L2 Cache (per Core): 256 KB,  L3 Cache: 4 MB
 * RAM: 16 GB 1867 MHz DDR3
 * JVM: Oracle 1.8.0_74-b02 64 bits
@@ -58,31 +58,31 @@ Tests has been performed on:
         <th>Benchmark</th><th>Mode</th><th>Samples</th><th>Score</th><th>Margin error (+/-)</th><th>Units</th>
     </tr>
     <tr>
-        <th>Manual</th><td>thrpt</td><td>200</td><td>18 076 665</td><td>77 789</td><td>ops/s</td>
+        <th>Manual</th><td>thrpt</td><td>200</td><td>17 346 805</td><td>85 422</td><td>ops/s</td>
     </tr>
     <tr>
-        <th>Selma</th><td>thrpt</td><td>200</td><td>16 839 320</td><td>52 403</td><td>ops/s</td>
+        <th>Selma</th><td>thrpt</td><td>200</td><td>16 736 954</td><td>64 365</td><td>ops/s</td>
     </tr>
     <tr>        
-        <th>MapStruct</th><td>thrpt</td><td>200</td><td>15 580 286</td><td>72 688</td><td>ops/s</td>
+        <th>MapStruct</th><td>thrpt</td><td>200</td><td>15 093 077</td><td>113 621</td><td>ops/s</td>
     </tr>
     <tr>
-        <th>JMapper</th><td>thrpt</td><td>200</td><td>15 355 310</td><td>149 259</td><td>ops/s</td>
+        <th>JMapper</th><td>thrpt</td><td>200</td><td>14 954 894</td><td>110 809</td><td>ops/s</td>
     </tr>
     <tr>
-        <th>Orika</th><td>thrpt</td><td>200</td><td>3 876 966</td><td>17 939</td><td>ops/s</td>
+        <th>Orika</th><td>thrpt</td><td>200</td><td>3 847 808</td><td>28 601</td><td>ops/s</td>
     </tr>
     <tr>       
-        <th>ModelMaper</th><td>thrpt</td><td>200</td><td>279 279</td><td>1 133</td><td>ops/s</td>
+        <th>ModelMaper</th><td>thrpt</td><td>200</td><td>276 890</td><td>910</td><td>ops/s</td>
     </tr>
     <tr>
-        <th>Dozer</th><td>thrpt</td><td>200</td><td>87 928</td><td>665</td><td>ops/s</td>
+        <th>Dozer</th><td>thrpt</td><td>200</td><td>81 846</td><td>497</td><td>ops/s</td>
     </tr>
 </table>
 
 Legend : Higher score is better
 
-Total time: 00:48:33
+Total time: 00:53:58
 
 ## Documentation ##
 
