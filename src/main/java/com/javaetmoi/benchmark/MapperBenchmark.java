@@ -40,37 +40,37 @@ public class MapperBenchmark {
     private OrderMapper manualMapper = new ManualMapper();
 
     @Benchmark
-    public void dozer() {
+    public void Dozer() {
         dozerMapper.map(OrderFactory.buildOrder());
     }
 
     @Benchmark
-    public void orika() {
+    public void Orika() {
         orikaMapper.map(OrderFactory.buildOrder());
     }
 
     @Benchmark
-    public void modelMapper() {
+    public void ModelMapper() {
         modelMapper.map(OrderFactory.buildOrder());
     }
 
     @Benchmark
-    public void mapStruct() {
+    public void MapStruct() {
         mapStructMapper.map(OrderFactory.buildOrder());
     }
 
     @Benchmark
-    public void selma() {
+    public void Selma() {
         selmaMapper.map(OrderFactory.buildOrder());
     }
 
     @Benchmark
-    public void jmapper() {
+    public void JMapper() {
         jmapperMapper.map(OrderFactory.buildOrder());
     }
     
     @Benchmark
-    public void manual() {
+    public void Manual() {
         manualMapper.map(OrderFactory.buildOrder());
     }
 

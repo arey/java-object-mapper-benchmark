@@ -1,4 +1,4 @@
-# Object-to-object mapping framework microbenchmark #
+# Object-to-object mapping framework microbenchmark
 
 Multi-layered applications often require to map between different object models (e.g. DTOs and entities). 
 Writing such boiler plate mapping code is a tedious and error-prone task.
@@ -9,7 +9,7 @@ This micro-benchmark compares performance of 6 frameworks. Results could be comp
 Benchmark are powered by a tool called [JMH](http://openjdk.java.net/projects/code-tools/jmh/) or also known as "Java Microbenchmarking Harness".
 JMH is developed by the OpenJDK team. 
 
-## Benchmarked object to object mapper frameworks ##
+## Benchmarked object to object mapper frameworks
 
 - [Dozer](https://github.com/DozerMapper/dozer)
 - [MapStruct](http://mapstruct.org/)
@@ -18,13 +18,13 @@ JMH is developed by the OpenJDK team.
 - [Orika](https://github.com/orika-mapper/orika)
 - [JMapper](https://github.com/jmapper-framework/jmapper-core)
 
-## Contributing to benchmark ##
+## Contributing to benchmark
 
 
 Github is for social coding platform: if you want to add another mapping framework or optimize an existing one, we encourage contributions through pull requests from [forks of this repository](http://help.github.com/forking/). If you want to contribute code this way, please reference a GitHub ticket as well covering the specific issue you are addressing.
 
 
-## Data model ##
+## Data model
 
 The data model used by this benchmark is very basic. It comes from the [Comparison](https://github.com/jhalterman/modelmapper/blob/master/core/src/test/java/org/modelmapper/performance/Comparison.java) class from the ModelMapper framework.
 It includes combinations which usually appear in Java Beans, such as:
@@ -34,7 +34,7 @@ It includes combinations which usually appear in Java Beans, such as:
 
 ![Data model UML diagram](/model.png)
 
-## Launch the benchmark ##
+## Launch the benchmark
 
 _Pre-requisites: Maven 3.x and a JDK 6 (or above)_
 
@@ -44,11 +44,18 @@ _Pre-requisites: Maven 3.x and a JDK 6 (or above)_
 
 ``java -jar target/benchmarks.jar``
 
-## Results ##
+Optional: To run a single benchmark, such as MapStruct, use `java -jar target/benchmarks.jar MapStruct`
+
+## Interpreting the Results
+
+The benchmarks measure throughput, given in "ops/time". The time unit used is seconds.
+Generally, the score represents the number of graph object mapped per second; the higher the score, the better.
+
+## Results
 
 Tests has been performed on:
 
-* OS: macOS Sierra
+* OS: macOS High Sierra
 * CPU: 3.1 GHz Intel Core i7, 2 cores, L2 Cache (per Core): 256 KB,  L3 Cache: 4 MB
 * RAM: 16 GB 1867 MHz DDR3
 * JVM: Oracle 1.8.0_74-b02 64 bits
@@ -58,38 +65,41 @@ Tests has been performed on:
         <th>Benchmark</th><th>Mode</th><th>Samples</th><th>Score</th><th>Margin error (+/-)</th><th>Units</th>
     </tr>
     <tr>
-        <th>Manual</th><td>thrpt</td><td>200</td><td>17 346 805</td><td>85 422</td><td>ops/s</td>
+        <th>Manual</th><td>thrpt</td><td>200</td><td>18 047 670</td><td>70 665</td><td>ops/s</td>
     </tr>
     <tr>
-        <th>Selma</th><td>thrpt</td><td>200</td><td>16 736 954</td><td>64 365</td><td>ops/s</td>
+        <th>Selma</th><td>thrpt</td><td>200</td><td>16 467 211</td><td>63 445</td><td>ops/s</td>
     </tr>
     <tr>        
-        <th>MapStruct</th><td>thrpt</td><td>200</td><td>15 093 077</td><td>113 621</td><td>ops/s</td>
+        <th>MapStruct</th><td>thrpt</td><td>200</td><td>15 266 378</td><td>125 660</td><td>ops/s</td>
     </tr>
     <tr>
-        <th>JMapper</th><td>thrpt</td><td>200</td><td>14 954 894</td><td>110 809</td><td>ops/s</td>
+        <th>JMapper</th><td>thrpt</td><td>200</td><td>15 487 461</td><td>119 421</td><td>ops/s</td>
     </tr>
     <tr>
-        <th>Orika</th><td>thrpt</td><td>200</td><td>3 847 808</td><td>28 601</td><td>ops/s</td>
+        <th>Orika</th><td>thrpt</td><td>200</td><td>3 522 891</td><td>40 734</td><td>ops/s</td>
     </tr>
     <tr>       
-        <th>ModelMaper</th><td>thrpt</td><td>200</td><td>276 890</td><td>910</td><td>ops/s</td>
+        <th>ModelMaper</th><td>thrpt</td><td>200</td><td>253 658</td><td>2 197</td><td>ops/s</td>
     </tr>
     <tr>
-        <th>Dozer</th><td>thrpt</td><td>200</td><td>81 846</td><td>497</td><td>ops/s</td>
+        <th>Dozer</th><td>thrpt</td><td>200</td><td>83 274</td><td>724</td><td>ops/s</td>
     </tr>
 </table>
 
-Legend : Higher score is better
+![Framework Comparison](results.png)
 
-Total time: 00:53:58
 
-## Documentation ##
+## Documentation
 
 * [Micro-benchmark of Java mapping object frameworks](http://javaetmoi.com/2015/09/benchmark-frameworks-java-mapping-objet/) (french article)
 
+## Generating plot
 
-## Credits ##
+1. Run benchmark while exporting results to csv with `java -jar target/benchmarks.jar -rff results.csv -rf csv`
+2. Use gnuplot to generate plot with `gnuplot benchmark.plt`. This will output `results.png`.
+
+## Credits
 
 * Uses [Maven](http://maven.apache.org/) as a build tool
 * Uses [JMH](http://openjdk.java.net/projects/code-tools/jmh/) for Java Microbenchmarking Harness

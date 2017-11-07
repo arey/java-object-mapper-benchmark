@@ -1,0 +1,8 @@
+"Benchmark","Mode","Threads","Samples","Score","Score Error (99,9%)","Unit"
+"com.javaetmoi.benchmark.MapperBenchmark.Dozer","thrpt",1,200,"83274,102727","724,456926","ops/s"
+"com.javaetmoi.benchmark.MapperBenchmark.JMapper","thrpt",1,200,"15487461,568428","119421,893528","ops/s"
+"com.javaetmoi.benchmark.MapperBenchmark.Manual","thrpt",1,200,"18047670,554063","70665,645808","ops/s"
+"com.javaetmoi.benchmark.MapperBenchmark.MapStruct","thrpt",1,200,"15266378,657168","125660,737628","ops/s"
+"com.javaetmoi.benchmark.MapperBenchmark.ModelMapper","thrpt",1,200,"253658,569440","2197,413754","ops/s"
+"com.javaetmoi.benchmark.MapperBenchmark.Orika","thrpt",1,200,"3522891,324206","40734,633417","ops/s"
+"com.javaetmoi.benchmark.MapperBenchmark.Selma","thrpt",1,200,"16467211,637012","63445,484294","ops/s"
