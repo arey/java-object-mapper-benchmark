@@ -2,8 +2,9 @@ package com.javaetmoi.benchmark;
 
 import java.util.Collection;
 
-import com.javaetmoi.benchmark.mapping.model.dto.OrderDTO;
-import org.openjdk.jmh.annotations.*;
+import org.openjdk.jmh.annotations.Benchmark;
+import org.openjdk.jmh.annotations.Scope;
+import org.openjdk.jmh.annotations.State;
 import org.openjdk.jmh.results.Result;
 import org.openjdk.jmh.results.RunResult;
 import org.openjdk.jmh.results.format.ResultFormatType;
@@ -22,45 +23,55 @@ import com.javaetmoi.benchmark.mapping.mapper.selma.SelmaMapper;
 import com.javaetmoi.benchmark.mapping.model.entity.OrderFactory;
 
 @State(Scope.Benchmark)
-public class MapperBenchmark {
+public class MapperBenchmark2 {
 
-    @Param({"DozerMapper", "JMapperMapper", "ManualMapper", "MapStructMapper", "ModelMapper", "OrikaMapper",  "SelmaMapper"})
-    private String type;
+    private OrderMapper dozerMapper = new DozerMapper();
 
-    private OrderMapper mapper;
+    private OrderMapper orikaMapper = new OrikaMapper();
 
-    @Setup(Level.Trial)
-    public void setup(){
-        switch (type) {
-            case "DozerMapper":
-                mapper = new DozerMapper();
-                break;
-            case "OrikaMapper":
-                mapper = new OrikaMapper();
-                break;
-            case "ModelMapper":
-                mapper = new ModelMapper();
-                break;
-            case "MapStructMapper":
-                mapper = new MapStructMapper();
-                break;
-            case "SelmaMapper":
-                mapper = new SelmaMapper();
-                break;
-            case "JMapperMapper":
-                mapper = new JMapperMapper();
-                break;
-            case "ManualMapper":
-                mapper = new ManualMapper();
-                break;
-            default:
-                throw new IllegalStateException("Unknown type: " + type);
-        }
+    private OrderMapper modelMapper = new ModelMapper();
+
+    private OrderMapper mapStructMapper = new MapStructMapper();
+
+    private OrderMapper selmaMapper = new SelmaMapper();
+
+    private OrderMapper jmapperMapper = new JMapperMapper();
+
+    private OrderMapper manualMapper = new ManualMapper();
+
+    @Benchmark
+    public void Dozer() {
+        dozerMapper.map(OrderFactory.buildOrder());
     }
 
     @Benchmark
-    public OrderDTO Mapper() {
-        return mapper.map(OrderFactory.buildOrder());
+    public void Orika() {
+        orikaMapper.map(OrderFactory.buildOrder());
+    }
+
+    @Benchmark
+    public void ModelMapper() {
+        modelMapper.map(OrderFactory.buildOrder());
+    }
+
+    @Benchmark
+    public void MapStruct() {
+        mapStructMapper.map(OrderFactory.buildOrder());
+    }
+
+    @Benchmark
+    public void Selma() {
+        selmaMapper.map(OrderFactory.buildOrder());
+    }
+
+    @Benchmark
+    public void JMapper() {
+        jmapperMapper.map(OrderFactory.buildOrder());
+    }
+
+    @Benchmark
+    public void Manual() {
+        manualMapper.map(OrderFactory.buildOrder());
     }
 
     public static void main(String... args) throws Exception {
