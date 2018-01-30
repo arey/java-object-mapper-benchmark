@@ -1,8 +1,10 @@
 package com.javaetmoi.benchmark;
 
 import java.util.Collection;
+import java.util.concurrent.TimeUnit;
 
 import com.javaetmoi.benchmark.mapping.model.dto.OrderDTO;
+import com.javaetmoi.benchmark.mapping.model.entity.Order;
 import org.openjdk.jmh.annotations.*;
 import org.openjdk.jmh.results.Result;
 import org.openjdk.jmh.results.RunResult;
@@ -20,6 +22,7 @@ import com.javaetmoi.benchmark.mapping.mapper.modelmapper.ModelMapper;
 import com.javaetmoi.benchmark.mapping.mapper.orika.OrikaMapper;
 import com.javaetmoi.benchmark.mapping.mapper.selma.SelmaMapper;
 import com.javaetmoi.benchmark.mapping.model.entity.OrderFactory;
+import org.openjdk.jmh.runner.options.TimeValue;
 
 @State(Scope.Benchmark)
 public class MapperBenchmark {
@@ -28,6 +31,7 @@ public class MapperBenchmark {
     private String type;
 
     private OrderMapper mapper;
+    private Order order;
 
     @Setup(Level.Trial)
     public void setup(){
@@ -58,14 +62,19 @@ public class MapperBenchmark {
         }
     }
 
+    @Setup(Level.Iteration)
+    public void preInit(){
+        order = OrderFactory.buildOrder();
+    }
+
     @Benchmark
-    public OrderDTO Mapper() {
-        return mapper.map(OrderFactory.buildOrder());
+    public void mapper() {
+        mapper.map(order);
     }
 
     public static void main(String... args) throws Exception {
         Options opts = new OptionsBuilder()
-                .include(".*")
+                .include(MapperBenchmark.class.getSimpleName())
                 .warmupIterations(5)
                 .measurementIterations(5)
                 .jvmArgs("-server")
