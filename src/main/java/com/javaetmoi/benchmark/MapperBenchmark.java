@@ -68,8 +68,8 @@ public class MapperBenchmark {
     }
 
     @Benchmark
-    public void mapper() {
-        mapper.map(order);
+    public OrderDTO mapper() {
+        return mapper.map(order);
     }
 
     public static void main(String... args) throws Exception {
