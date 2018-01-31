@@ -1,10 +1,11 @@
 package com.javaetmoi.benchmark;
 
 import java.util.Collection;
+import java.util.concurrent.TimeUnit;
 
-import org.openjdk.jmh.annotations.Benchmark;
-import org.openjdk.jmh.annotations.Scope;
-import org.openjdk.jmh.annotations.State;
+import com.javaetmoi.benchmark.mapping.model.dto.OrderDTO;
+import com.javaetmoi.benchmark.mapping.model.entity.Order;
+import org.openjdk.jmh.annotations.*;
 import org.openjdk.jmh.results.Result;
 import org.openjdk.jmh.results.RunResult;
 import org.openjdk.jmh.results.format.ResultFormatType;
@@ -21,64 +22,61 @@ import com.javaetmoi.benchmark.mapping.mapper.modelmapper.ModelMapper;
 import com.javaetmoi.benchmark.mapping.mapper.orika.OrikaMapper;
 import com.javaetmoi.benchmark.mapping.mapper.selma.SelmaMapper;
 import com.javaetmoi.benchmark.mapping.model.entity.OrderFactory;
+import org.openjdk.jmh.runner.options.TimeValue;
 
 @State(Scope.Benchmark)
 public class MapperBenchmark {
 
-    private OrderMapper dozerMapper = new DozerMapper();
+    @Param({"DozerMapper", "JMapperMapper", "ManualMapper", "MapStructMapper", "ModelMapper", "OrikaMapper",  "SelmaMapper"})
+    private String type;
 
-    private OrderMapper orikaMapper = new OrikaMapper();
+    private OrderMapper mapper;
+    private Order order;
 
-    private OrderMapper modelMapper = new ModelMapper();
+    @Setup(Level.Trial)
+    public void setup(){
+        switch (type) {
+            case "DozerMapper":
+                mapper = new DozerMapper();
+                break;
+            case "OrikaMapper":
+                mapper = new OrikaMapper();
+                break;
+            case "ModelMapper":
+                mapper = new ModelMapper();
+                break;
+            case "MapStructMapper":
+                mapper = new MapStructMapper();
+                break;
+            case "SelmaMapper":
+                mapper = new SelmaMapper();
+                break;
+            case "JMapperMapper":
+                mapper = new JMapperMapper();
+                break;
+            case "ManualMapper":
+                mapper = new ManualMapper();
+                break;
+            default:
+                throw new IllegalStateException("Unknown type: " + type);
+        }
+    }
 
-    private OrderMapper mapStructMapper = new MapStructMapper();
-
-    private OrderMapper selmaMapper = new SelmaMapper();
-
-    private OrderMapper jmapperMapper = new JMapperMapper();
-    
-    private OrderMapper manualMapper = new ManualMapper();
-
-    @Benchmark
-    public void Dozer() {
-        dozerMapper.map(OrderFactory.buildOrder());
+    @Setup(Level.Iteration)
+    public void preInit(){
+        order = OrderFactory.buildOrder();
     }
 
     @Benchmark
-    public void Orika() {
-        orikaMapper.map(OrderFactory.buildOrder());
-    }
-
-    @Benchmark
-    public void ModelMapper() {
-        modelMapper.map(OrderFactory.buildOrder());
-    }
-
-    @Benchmark
-    public void MapStruct() {
-        mapStructMapper.map(OrderFactory.buildOrder());
-    }
-
-    @Benchmark
-    public void Selma() {
-        selmaMapper.map(OrderFactory.buildOrder());
-    }
-
-    @Benchmark
-    public void JMapper() {
-        jmapperMapper.map(OrderFactory.buildOrder());
-    }
-    
-    @Benchmark
-    public void Manual() {
-        manualMapper.map(OrderFactory.buildOrder());
+    public OrderDTO mapper() {
+        return mapper.map(order);
     }
 
     public static void main(String... args) throws Exception {
         Options opts = new OptionsBuilder()
-                .include(".*")
-                .warmupIterations(2)
-                .measurementIterations(2)
+                .include(MapperBenchmark.class.getSimpleName())
+                .warmupIterations(5)
+                .measurementIterations(5)
                 .jvmArgs("-server")
                 .forks(1)
                 .resultFormat(ResultFormatType.TEXT)
