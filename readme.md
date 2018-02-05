@@ -87,10 +87,6 @@ Tests has been performed on:
     </tr>
 </table>
 
-
-"Benchmark","Mode","Threads","Samples","Score","Score Error (99,9%)","Unit","Param: type"
-"com.javaetmoi.benchmark.MapperBenchmark.mapper","thrpt",1,200,"26095841,101453","245410,911251","ops/s",Selma
-
 ![Framework Comparison](results.png)
 
 
