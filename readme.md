@@ -36,7 +36,7 @@ It includes combinations which usually appear in Java Beans, such as:
 
 ## Launch the benchmark
 
-_Pre-requisites: Maven 3.x and a JDK 6 (or above)_
+_Pre-requisites: Maven 3.x and a JDK 7 (or above)_
 
 ``git clone git://github.com/arey/java-object-mapper-benchmark.git``
 
@@ -65,27 +65,31 @@ Tests has been performed on:
         <th>Benchmark</th><th>Mode</th><th>Samples</th><th>Score</th><th>Margin error (+/-)</th><th>Units</th>
     </tr>
     <tr>
-        <th>Manual</th><td>thrpt</td><td>200</td><td>18 047 670</td><td>70 665</td><td>ops/s</td>
-    </tr>
-    <tr>
-        <th>Selma</th><td>thrpt</td><td>200</td><td>16 467 211</td><td>63 445</td><td>ops/s</td>
+        <th>Manual</th><td>thrpt</td><td>200</td><td>27 598 750</td><td>346 265</td><td>ops/s</td>
     </tr>
     <tr>        
-        <th>MapStruct</th><td>thrpt</td><td>200</td><td>15 266 378</td><td>125 660</td><td>ops/s</td>
+        <th>MapStruct</th><td>thrpt</td><td>200</td><td>27 206 021</td><td>133 009</td><td>ops/s</td>
     </tr>
     <tr>
-        <th>JMapper</th><td>thrpt</td><td>200</td><td>15 487 461</td><td>119 421</td><td>ops/s</td>
+        <th>Selma</th><td>thrpt</td><td>200</td><td>26 205 612</td><td>185 326</td><td>ops/s</td>
     </tr>
     <tr>
-        <th>Orika</th><td>thrpt</td><td>200</td><td>3 522 891</td><td>40 734</td><td>ops/s</td>
+        <th>JMapper</th><td>thrpt</td><td>200</td><td>23 377 962</td><td>124 537</td><td>ops/s</td>
+    </tr>
+    <tr>
+        <th>Orika</th><td>thrpt</td><td>200</td><td>4 097 030</td><td>21 220</td><td>ops/s</td>
     </tr>
     <tr>       
-        <th>ModelMaper</th><td>thrpt</td><td>200</td><td>253 658</td><td>2 197</td><td>ops/s</td>
+        <th>ModelMaper</th><td>thrpt</td><td>200</td><td>323 791</td><td>3 172</td><td>ops/s</td>
     </tr>
     <tr>
-        <th>Dozer</th><td>thrpt</td><td>200</td><td>83 274</td><td>724</td><td>ops/s</td>
+        <th>Dozer</th><td>thrpt</td><td>200</td><td>84 113</td><td>331</td><td>ops/s</td>
     </tr>
 </table>
+
+
+"Benchmark","Mode","Threads","Samples","Score","Score Error (99,9%)","Unit","Param: type"
+"com.javaetmoi.benchmark.MapperBenchmark.mapper","thrpt",1,200,"26095841,101453","245410,911251","ops/s",Selma
 
 ![Framework Comparison](results.png)
 

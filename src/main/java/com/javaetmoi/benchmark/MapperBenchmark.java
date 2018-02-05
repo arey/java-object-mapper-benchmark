@@ -27,7 +27,7 @@ import org.openjdk.jmh.runner.options.TimeValue;
 @State(Scope.Benchmark)
 public class MapperBenchmark {
 
-    @Param({"DozerMapper", "JMapperMapper", "ManualMapper", "MapStructMapper", "ModelMapper", "OrikaMapper",  "SelmaMapper"})
+    @Param({"Manual", "MapStruct",  "Selma", "JMapper", "Orika", "ModelMapper", "Dozer"})
     private String type;
 
     private OrderMapper mapper;
@@ -36,25 +36,25 @@ public class MapperBenchmark {
     @Setup(Level.Trial)
     public void setup(){
         switch (type) {
-            case "DozerMapper":
+            case "Dozer":
                 mapper = new DozerMapper();
                 break;
-            case "OrikaMapper":
+            case "Orika":
                 mapper = new OrikaMapper();
                 break;
             case "ModelMapper":
                 mapper = new ModelMapper();
                 break;
-            case "MapStructMapper":
+            case "MapStruct":
                 mapper = new MapStructMapper();
                 break;
-            case "SelmaMapper":
+            case "Selma":
                 mapper = new SelmaMapper();
                 break;
-            case "JMapperMapper":
+            case "JMapper":
                 mapper = new JMapperMapper();
                 break;
-            case "ManualMapper":
+            case "Manual":
                 mapper = new ManualMapper();
                 break;
             default:
