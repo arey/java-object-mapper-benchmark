@@ -17,6 +17,7 @@ JMH is developed by the OpenJDK team.
 - [Selma](http://www.selma-java.org/)
 - [Orika](https://github.com/orika-mapper/orika)
 - [JMapper](https://github.com/jmapper-framework/jmapper-core)
+- [BULL](https://github.com/HotelsDotCom/bull)
 
 ## Contributing to benchmark
 
