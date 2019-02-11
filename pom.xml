@@ -21,7 +21,7 @@
         <version.selma>1.0</version.selma>
         <version.jmapper>1.6.1.CR2</version.jmapper>
         <version.jmh>1.19</version.jmh>
-        <version.bull>1.1.1</version.bull>
+        <version.bull>1.1.2-SNAPSHOT</version.bull>
         <version.junit>4.12</version.junit>
         <version.slf4j>1.7.22</version.slf4j>
 

@@ -1,13 +1,11 @@
 package com.javaetmoi.benchmark.mapping.mapper.bull;
 
 import com.hotels.beans.BeanUtils;
-import com.hotels.beans.model.FieldTransformer;
+import com.hotels.beans.model.FieldMapping;
 import com.hotels.beans.transformer.Transformer;
 import com.javaetmoi.benchmark.mapping.mapper.OrderMapper;
 import com.javaetmoi.benchmark.mapping.model.dto.OrderDTO;
-import com.javaetmoi.benchmark.mapping.model.entity.Customer;
 import com.javaetmoi.benchmark.mapping.model.entity.Order;
-
 
 /**
  * BULL mapper.
@@ -23,17 +21,17 @@ public class BullMapper implements OrderMapper {
     @Override
     public OrderDTO map(Order source) {
         return transformer
-                .withFieldTransformer(getCustomerTransformers(source.getCustomer()))
+                .withFieldMapping(getCustomerFieldMappings())
                 .transform(source, OrderDTO.class);
     }
 
-    private FieldTransformer[] getCustomerTransformers(Customer customer) {
-        return new FieldTransformer[]{
-                new FieldTransformer<>("customerName", val -> customer.getName()),
-                new FieldTransformer<>("billingStreetAddress", val -> customer.getBillingAddress().getStreet()),
-                new FieldTransformer<>("billingCity", val -> customer.getBillingAddress().getCity()),
-                new FieldTransformer<>("shippingStreetAddress", val -> customer.getShippingAddress().getStreet()),
-                new FieldTransformer<>("shippingCity", val -> customer.getShippingAddress().getCity()),
+    private FieldMapping[] getCustomerFieldMappings() {
+        return new FieldMapping[] {
+            new FieldMapping("customer.name", "customerName"),
+            new FieldMapping("customer.billingAddress.city", "billingCity"),
+            new FieldMapping("customer.billingAddress.street", "billingStreetAddress"),
+            new FieldMapping("customer.shippingAddress.city", "shippingCity"),
+            new FieldMapping("customer.shippingAddress.street", "shippingStreetAddress")
         };
     }
 }
