@@ -15,21 +15,18 @@ public class BullMapper implements OrderMapper {
     private final Transformer transformer;
 
     public BullMapper() {
-        this.transformer = new BeanUtils().getTransformer().withFieldMapping(getCustomerFieldMappings());
+        FieldMapping[] fieldMappings = new FieldMapping[] {
+                new FieldMapping("customer.name", "customerName"),
+                new FieldMapping("customer.billingAddress.city", "billingCity"),
+                new FieldMapping("customer.billingAddress.street", "billingStreetAddress"),
+                new FieldMapping("customer.shippingAddress.city", "shippingCity"),
+                new FieldMapping("customer.shippingAddress.street", "shippingStreetAddress")
+        };
+        this.transformer = new BeanUtils().getTransformer().withFieldMapping(fieldMappings);
     }
 
     @Override
     public OrderDTO map(Order source) {
         return transformer.transform(source, OrderDTO.class);
-    }
-
-    private FieldMapping[] getCustomerFieldMappings() {
-        return new FieldMapping[] {
-            new FieldMapping("customer.name", "customerName"),
-            new FieldMapping("customer.billingAddress.city", "billingCity"),
-            new FieldMapping("customer.billingAddress.street", "billingStreetAddress"),
-            new FieldMapping("customer.shippingAddress.city", "shippingCity"),
-            new FieldMapping("customer.shippingAddress.street", "shippingStreetAddress")
-        };
     }
 }

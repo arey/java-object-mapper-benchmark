@@ -28,7 +28,8 @@ import org.openjdk.jmh.runner.options.TimeValue;
 @State(Scope.Benchmark)
 public class MapperBenchmark {
 
-    @Param({"Manual", "MapStruct",  "Selma", "JMapper", "Orika", "ModelMapper", "Dozer", "BULL"})
+//    @Param({"Manual", "MapStruct",  "Selma", "JMapper", "Orika", "ModelMapper", "Dozer", "BULL"})
+    @Param({"BULL"})
     private String type;
 
     private OrderMapper mapper;

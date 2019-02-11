@@ -86,6 +86,9 @@ Tests has been performed on:
     <tr>
         <th>Dozer</th><td>thrpt</td><td>200</td><td>84 113</td><td>331</td><td>ops/s</td>
     </tr>
+    <tr>
+        <th>BULL</th><td>thrpt</td><td>200</td><td>108 289</td><td>802</td><td>ops/s</td>
+    </tr>
 </table>
 
 ![Framework Comparison](results.png)
