@@ -15,14 +15,12 @@ public class BullMapper implements OrderMapper {
     private final Transformer transformer;
 
     public BullMapper() {
-        this.transformer = new BeanUtils().getTransformer();
+        this.transformer = new BeanUtils().getTransformer().withFieldMapping(getCustomerFieldMappings());
     }
 
     @Override
     public OrderDTO map(Order source) {
-        return transformer
-                .withFieldMapping(getCustomerFieldMappings())
-                .transform(source, OrderDTO.class);
+        return transformer.transform(source, OrderDTO.class);
     }
 
     private FieldMapping[] getCustomerFieldMappings() {
