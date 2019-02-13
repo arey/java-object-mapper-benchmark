@@ -17,6 +17,7 @@ JMH is developed by the OpenJDK team.
 - [Selma](http://www.selma-java.org/)
 - [Orika](https://github.com/orika-mapper/orika)
 - [JMapper](https://github.com/jmapper-framework/jmapper-core)
+- [BULL](https://github.com/HotelsDotCom/bull)
 
 ## Contributing to benchmark
 
@@ -36,7 +37,7 @@ It includes combinations which usually appear in Java Beans, such as:
 
 ## Launch the benchmark
 
-_Pre-requisites: Maven 3.x and a JDK 7 (or above)_
+_Pre-requisites: Maven 3.x and a JDK 8 (or above)_
 
 ``git clone git://github.com/arey/java-object-mapper-benchmark.git``
 
@@ -79,12 +80,15 @@ Tests has been performed on:
     <tr>
         <th>Orika</th><td>thrpt</td><td>200</td><td>4 097 030</td><td>21 220</td><td>ops/s</td>
     </tr>
+    </tr>
+        <th>BULL</th><td>thrpt</td><td>200</td><td>468 129</td><td>4955</td><td>ops/s</td>
+    </tr>
     <tr>       
         <th>ModelMaper</th><td>thrpt</td><td>200</td><td>323 791</td><td>3 172</td><td>ops/s</td>
     </tr>
     <tr>
         <th>Dozer</th><td>thrpt</td><td>200</td><td>84 113</td><td>331</td><td>ops/s</td>
-    </tr>
+    <tr>
 </table>
 
 ![Framework Comparison](results.png)
