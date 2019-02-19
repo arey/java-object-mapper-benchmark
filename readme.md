@@ -80,7 +80,7 @@ Tests has been performed on:
     <tr>
         <th>Orika</th><td>thrpt</td><td>200</td><td>4 097 030</td><td>21 220</td><td>ops/s</td>
     </tr>
-    </tr>
+    <tr>
         <th>BULL</th><td>thrpt</td><td>200</td><td>468 129</td><td>4955</td><td>ops/s</td>
     </tr>
     <tr>       
