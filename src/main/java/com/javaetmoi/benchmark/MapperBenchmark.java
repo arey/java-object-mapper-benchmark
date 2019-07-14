@@ -4,6 +4,7 @@ import java.util.Collection;
 import java.util.concurrent.TimeUnit;
 
 import com.javaetmoi.benchmark.mapping.mapper.bull.BullMapper;
+import com.javaetmoi.benchmark.mapping.mapper.datus.DatusMapper;
 import com.javaetmoi.benchmark.mapping.model.dto.OrderDTO;
 import com.javaetmoi.benchmark.mapping.model.entity.Order;
 import org.openjdk.jmh.annotations.*;
@@ -28,7 +29,7 @@ import org.openjdk.jmh.runner.options.TimeValue;
 @State(Scope.Benchmark)
 public class MapperBenchmark {
 
-    @Param({"Manual", "MapStruct",  "Selma", "JMapper", "Orika", "ModelMapper", "Dozer", "BULL"})
+    @Param({"Manual", "MapStruct",  "Selma", "JMapper", "Orika", "ModelMapper", "Dozer", "BULL", "datus"})
     private String type;
 
     private OrderMapper mapper;
@@ -60,6 +61,9 @@ public class MapperBenchmark {
                 break;
             case "BULL":
                 mapper = new BullMapper();
+                break;
+            case "datus":
+                mapper = new DatusMapper();
                 break;
             default:
                 throw new IllegalStateException("Unknown type: " + type);
