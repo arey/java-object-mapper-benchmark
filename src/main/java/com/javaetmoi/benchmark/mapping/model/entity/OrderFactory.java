@@ -1,6 +1,7 @@
 package com.javaetmoi.benchmark.mapping.model.entity;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class OrderFactory {
@@ -22,6 +23,18 @@ public class OrderFactory {
         order.setProducts(products);
         products.add(new Product("socks"));
         products.add(new Product("shoes"));
+        return order;
+    }
+
+    public static Order buildPartialOrder() {
+        Order order = new Order();
+        Customer customer = new Customer();
+        order.setCustomer(customer);
+        customer.setName("John Doe");
+        Address billingAddress = new Address();
+        customer.setBillingAddress(billingAddress);
+        billingAddress.setStreet("93 Newcastle Dr.");
+        order.setProducts(Collections.emptyList());
         return order;
     }
 }

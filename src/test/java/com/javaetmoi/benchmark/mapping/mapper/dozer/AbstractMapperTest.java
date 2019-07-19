@@ -3,15 +3,16 @@ package com.javaetmoi.benchmark.mapping.mapper.dozer;
 
 import com.javaetmoi.benchmark.mapping.mapper.OrderMapper;
 import com.javaetmoi.benchmark.mapping.model.dto.OrderDTO;
-import com.javaetmoi.benchmark.mapping.model.entity.*;
+import com.javaetmoi.benchmark.mapping.model.entity.Order;
+import com.javaetmoi.benchmark.mapping.model.entity.OrderFactory;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 public abstract class AbstractMapperTest {
 
     @Test
-    public void map() {
+    public void map_with_all_fields() {
         Order order = OrderFactory.buildOrder();
         OrderDTO orderDTO = testedOrderMapper().map(order);
         assertEquals(orderDTO.getCustomerName(), "Joe Smith");
@@ -21,6 +22,22 @@ public abstract class AbstractMapperTest {
         assertEquals(orderDTO.getShippingCity(), "Boston");
         assertEquals(orderDTO.getProducts().get(0).getName(), "socks");
         assertEquals(orderDTO.getProducts().get(1).getName(), "shoes");
+    }
+
+    @Test
+    public void map_with_partial_order() {
+        Order order = OrderFactory.buildPartialOrder();
+        OrderDTO orderDTO = testedOrderMapper().map(order);
+        assertEquals(orderDTO.getCustomerName(), "John Doe");
+        assertEquals(orderDTO.getBillingStreetAddress(), "93 Newcastle Dr.");
+        assertTrue(orderDTO.getProducts().isEmpty());
+    }
+
+    @Test
+    public void map_with_empty_order() {
+        Order order = new Order();
+        OrderDTO orderDTO = testedOrderMapper().map(order);
+        assertNotNull(orderDTO);
     }
 
     protected abstract OrderMapper testedOrderMapper();

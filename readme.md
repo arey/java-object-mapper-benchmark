@@ -23,7 +23,10 @@ JMH is developed by the OpenJDK team.
 ## Contributing to benchmark
 
 
-Github is for social coding platform: if you want to add another mapping framework or optimize an existing one, we encourage contributions through pull requests from [forks of this repository](http://help.github.com/forking/). If you want to contribute code this way, please reference a GitHub ticket as well covering the specific issue you are addressing.
+Github is for social coding platform: if you want to add another mapping framework or optimize an existing one, we encourage contributions 
+through pull requests from [forks of this repository](http://help.github.com/forking/).
+If you want to contribute code this way, please reference a GitHub ticket as well covering the specific issue you are addressing.
+To add a new mapper, please add a unit test that extends the `AbstractMapperTest` class and declare your mapper into the `MapperBenchmark` class. 
 
 
 ## Data model

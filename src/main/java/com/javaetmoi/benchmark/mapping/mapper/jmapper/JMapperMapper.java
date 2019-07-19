@@ -5,6 +5,8 @@ import com.googlecode.jmapper.api.JMapperAPI;
 import com.javaetmoi.benchmark.mapping.mapper.OrderMapper;
 import com.javaetmoi.benchmark.mapping.model.dto.OrderDTO;
 import com.javaetmoi.benchmark.mapping.model.dto.ProductDTO;
+import com.javaetmoi.benchmark.mapping.model.entity.Address;
+import com.javaetmoi.benchmark.mapping.model.entity.Customer;
 import com.javaetmoi.benchmark.mapping.model.entity.Order;
 
 import static com.googlecode.jmapper.api.JMapperAPI.attribute;
@@ -32,6 +34,17 @@ public class JMapperMapper implements OrderMapper {
 
     @Override
     public OrderDTO map(Order source) {
+        // Waiting https://github.com/jmapper-framework/jmapper-core/issues/43
+        // By waiting: hand mapping with by practice 'cause we are changing the source object.
+        if (source.getCustomer() == null) {
+            source.setCustomer(new Customer());
+        }
+        if (source.getCustomer().getShippingAddress() == null) {
+            source.getCustomer().setShippingAddress(new Address());
+        }
+        if (source.getCustomer().getBillingAddress() == null) {
+            source.getCustomer().setBillingAddress(new Address());
+        }
         return mapper.getDestination(source);
     }
 
