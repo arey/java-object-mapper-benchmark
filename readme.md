@@ -65,35 +65,18 @@ Tests has been performed on:
 * RAM: 16 GB 1867 MHz DDR3
 * JVM: Oracle 1.8.0_74-b02 64 bits
 
-<table>
-    <tr>
-        <th>Benchmark</th><th>Mode</th><th>Samples</th><th>Score</th><th>Margin error (+/-)</th><th>Units</th>
-    </tr>
-    <tr>
-        <th>Manual</th><td>thrpt</td><td>200</td><td>27 598 750</td><td>346 265</td><td>ops/s</td>
-    </tr>
-    <tr>        
-        <th>MapStruct</th><td>thrpt</td><td>200</td><td>27 206 021</td><td>133 009</td><td>ops/s</td>
-    </tr>
-    <tr>
-        <th>Selma</th><td>thrpt</td><td>200</td><td>26 205 612</td><td>185 326</td><td>ops/s</td>
-    </tr>
-    <tr>
-        <th>JMapper</th><td>thrpt</td><td>200</td><td>23 377 962</td><td>124 537</td><td>ops/s</td>
-    </tr>
-    <tr>
-        <th>Orika</th><td>thrpt</td><td>200</td><td>4 097 030</td><td>21 220</td><td>ops/s</td>
-    </tr>
-    <tr>
-        <th>BULL</th><td>thrpt</td><td>200</td><td>468 129</td><td>4955</td><td>ops/s</td>
-    </tr>
-    <tr>       
-        <th>ModelMaper</th><td>thrpt</td><td>200</td><td>323 791</td><td>3 172</td><td>ops/s</td>
-    </tr>
-    <tr>
-        <th>Dozer</th><td>thrpt</td><td>200</td><td>84 113</td><td>331</td><td>ops/s</td>
-    <tr>
-</table>
+| Benchmark      | Mode  | Samples | Score       | Margin error (+/-) | Units |
+|----------------|-------|---------|-------------|--------------------|-------|
+| Manual         | thrpt | 200     | 26 978 437  | 615 002            | ops/s |
+| MapStruct      | thrpt | 200     | 28 039 597  | 199 255            | ops/s |
+| Selma          | thrpt | 200     | 27 518 789  | 238 602            | ops/s |
+| JMapper        | thrpt | 200     | 24 531 754  | 123 945            | ops/s |
+| Orika          | thrpt | 200     |  4 565 378  |  24 947            | ops/s |
+| ModelMapper    | thrpt | 200     |    184 304  |  12 777            | ops/s |
+| Dozer          | thrpt | 200     |     89 860  |     462            | ops/s |
+| BULL           | thrpt | 200     |    121 967  |     973            | ops/s |
+| datus          | thrpt | 200     |  8 230 775  |  59 673            | ops/s |
+
 
 ![Framework Comparison](results.png)
 

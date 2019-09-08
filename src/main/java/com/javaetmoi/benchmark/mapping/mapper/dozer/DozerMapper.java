@@ -1,18 +1,22 @@
 package com.javaetmoi.benchmark.mapping.mapper.dozer;
 
+import com.github.dozermapper.core.DozerBeanMapperBuilder;
+import com.github.dozermapper.core.Mapper;
 import com.javaetmoi.benchmark.mapping.mapper.OrderMapper;
 import com.javaetmoi.benchmark.mapping.model.dto.OrderDTO;
 import com.javaetmoi.benchmark.mapping.model.entity.Order;
-import org.dozer.DozerBeanMapper;
 
-import java.util.Arrays;
+import java.util.Collections;
 
 public class DozerMapper implements OrderMapper {
 
-    private DozerBeanMapper beanMapper = new DozerBeanMapper();
+    private Mapper beanMapper;
 
     public DozerMapper() {
-        beanMapper.setMappingFiles(Arrays.asList("com/javaetmoi/benchmark/mapping/mapper/dozer/dozer.xml"));
+        beanMapper = DozerBeanMapperBuilder
+                .create()
+                .withMappingFiles(Collections.singletonList("com/javaetmoi/benchmark/mapping/mapper/dozer/dozer.xml"))
+                .build();
     }
 
     @Override
