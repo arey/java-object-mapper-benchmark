@@ -1,0 +1,81 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - master
+      - 'releases/*'
+  pull_request:
+    branches:
+      - '*'
+
+jobs:
+  linux:
+    name: 'Linux (JDK 8)'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: 'Set up JDK 8'
+        uses: actions/setup-java@v1
+        with:
+          java-version: 8
+      - name: 'Test'
+        shell: bash
+        run: ./mvnw clean install
+  benchmark:
+    name: ${{ matrix.mapper }} Benchmark
+    needs: linux
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        mapper: [Manual, MapStruct, Selma, JMapper, datus, Orika, ModelMapper, BULL, Dozer]
+    steps:
+      - uses: actions/checkout@master
+      - name: 'Set up JDK 8'
+        uses: actions/setup-java@v1
+        with:
+          java-version: 8
+      - name: 'Install'
+        shell: bash
+        run: ./mvnw clean install -DskipTests
+      - name: 'Benchmark'
+        shell: bash
+        run: java -jar target/benchmarks.jar -p type=${{ matrix.mapper }} -rff results_${{ matrix.mapper }}.csv -rf csv
+      - uses: actions/upload-artifact@master
+        name: Upload Benchmark Results
+        with:
+          name: benchmark_results
+          path: results_${{ matrix.mapper }}.csv
+  collect_benchmark:
+    name: Collect benchmarks
+    needs: benchmark
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - uses: actions/download-artifact@master
+        name: Download benchmarks
+        with:
+          name: benchmark_results
+      - shell: bash
+        name: Prepare CSV Results
+        run: |
+          head -1 benchmark_results/results_Manual.csv > results.csv
+          for mapper in Manual MapStruct Selma JMapper datus Orika ModelMapper BULL Dozer; do sed 1d benchmark_results/results_${mapper}.csv >> results.csv; done
+          less results.csv
+      - uses: actions/upload-artifact@master
+        name: Upload CSV Results
+        with:
+          name: results
+          path: results.csv
+      - shell: bash
+        name: Install gnuplot
+        run: sudo apt-get install gnuplot
+      - shell: bash
+        name: Plot Results
+        run: |
+          gnuplot -c benchmark.plt
+      - uses: actions/upload-artifact@master
+        name: Upload Plot
+        with:
+          name: results
+          path: results.png

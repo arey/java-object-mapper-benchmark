@@ -49,7 +49,7 @@ _Pre-requisites: Maven 3.x and a JDK 8 (or above)_
 
 ``java -jar target/benchmarks.jar``
 
-Optional: To run a single benchmark, such as MapStruct, use `java -jar target/benchmarks.jar MapStruct`
+Optional: To run a single benchmark, such as MapStruct, use `java -jar target/benchmarks.jar -p type=MapStruct`
 
 ## Interpreting the Results
 
