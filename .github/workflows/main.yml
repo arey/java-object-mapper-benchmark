@@ -69,7 +69,9 @@ jobs:
           path: results.csv
       - shell: bash
         name: Install gnuplot
-        run: sudo apt-get install gnuplot
+        run: |
+          sudo apt-get update
+          sudo apt-get install gnuplot
       - shell: bash
         name: Plot Results
         run: |
