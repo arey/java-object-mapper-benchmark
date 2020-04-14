@@ -6,7 +6,7 @@
 "com.javaetmoi.benchmark.MapperBenchmark.mapper","thrpt",1,200,"8230775,891415","59673,825530","ops/s",datus
 "com.javaetmoi.benchmark.MapperBenchmark.mapper","thrpt",1,200,"4565378,535779","24947,644996","ops/s",Orika
 "com.javaetmoi.benchmark.MapperBenchmark.mapper","thrpt",1,200,"184304,271986","1277,567799","ops/s",ModelMapper
-"com.javaetmoi.benchmark.MapperBenchmark.mapper","thrpt",1,200,"121967,799622","973,434200","ops/s",BULL
+"com.javaetmoi.benchmark.MapperBenchmark.mapper","thrpt",1,200,"178027,846","679,915001","ops/s",BULL
 "com.javaetmoi.benchmark.MapperBenchmark.mapper","thrpt",1,200,"89860,325285","462,290433","ops/s",Dozer
 
 
