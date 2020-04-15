@@ -74,7 +74,7 @@ Tests has been performed on:
 | Orika          | thrpt | 200     |  4 565 378  |  24 947            | ops/s |
 | ModelMapper    | thrpt | 200     |    184 304  |  12 777            | ops/s |
 | Dozer          | thrpt | 200     |     89 860  |     462            | ops/s |
-| BULL           | thrpt | 200     |    121 967  |     973            | ops/s |
+| BULL           | thrpt | 200     |    178 027  |     679            | ops/s |
 | datus          | thrpt | 200     |  8 230 775  |  59 673            | ops/s |
 
 
