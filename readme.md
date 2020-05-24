@@ -1,4 +1,5 @@
 # Object-to-object mapping framework microbenchmark
+![CI](https://github.com/arey/java-object-mapper-benchmark/workflows/CI/badge.svg)
 
 Multi-layered applications often require to map between different object models (e.g. DTOs and entities). 
 Writing such boiler plate mapping code is a tedious and error-prone task.
