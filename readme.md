@@ -20,6 +20,7 @@ JMH is developed by the OpenJDK team.
 - [JMapper](https://github.com/jmapper-framework/jmapper-core)
 - [BULL](https://github.com/HotelsDotCom/bull)
 - [datus](https://github.com/roookeee/datus)
+- [ReMap](https://github.com/remondis-it/remap)
 
 ## Contributing to benchmark
 

@@ -23,6 +23,7 @@
         <version.jmh>1.25.2</version.jmh>
         <version.bull>1.7.2-jdk8</version.bull>
         <version.datus>1.5.0</version.datus>
+        <version.remap>4.2.5</version.remap>
         <version.junit>4.13</version.junit>
         <version.slf4j>1.7.30</version.slf4j>
 
@@ -102,6 +103,12 @@
             <groupId>com.googlecode.jmapper-framework</groupId>
             <artifactId>jmapper-core</artifactId>
             <version>${version.jmapper}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.remondis</groupId>
+            <artifactId>remap</artifactId>
+            <version>${version.remap}</version>
         </dependency>
 
         <dependency>
