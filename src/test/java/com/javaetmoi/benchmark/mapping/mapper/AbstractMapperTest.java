@@ -1,4 +1,4 @@
-package com.javaetmoi.benchmark.mapping.mapper.dozer;
+package com.javaetmoi.benchmark.mapping.mapper;
 
 
 import com.javaetmoi.benchmark.mapping.mapper.OrderMapper;
