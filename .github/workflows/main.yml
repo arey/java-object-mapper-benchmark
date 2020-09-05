@@ -60,7 +60,7 @@ jobs:
         name: Prepare CSV Results
         run: |
           head -1 results_Manual.csv > results.csv
-          for mapper in Manual MapStruct Selma JMapper datus Orika ModelMapper BULL Dozer; do sed 1d results_${mapper}.csv >> results.csv; done
+          for mapper in Manual MapStruct Selma JMapper datus Orika ModelMapper BULL Dozer ReMap; do sed 1d results_${mapper}.csv >> results.csv; done
           less results.csv
       - uses: actions/upload-artifact@master
         name: Upload CSV Results
