@@ -16,15 +16,16 @@
     <properties>
         <version.orika>1.5.4</version.orika>
         <version.dozer>6.5.0</version.dozer>
-        <version.modelmapper>2.3.5</version.modelmapper>
-        <version.mapstruct>1.3.0.Final</version.mapstruct>
+        <version.modelmapper>2.3.8</version.modelmapper>
+        <version.mapstruct>1.4.0.CR1</version.mapstruct>
         <version.selma>1.0</version.selma>
         <version.jmapper>1.6.1.CR2</version.jmapper>
-        <version.jmh>1.19</version.jmh>
-        <version.bull>1.6.5-jdk8</version.bull>
-        <version.datus>1.4.0</version.datus>
-        <version.junit>4.12</version.junit>
-        <version.slf4j>1.7.22</version.slf4j>
+        <version.jmh>1.25.2</version.jmh>
+        <version.bull>1.7.2-jdk8</version.bull>
+        <version.datus>1.5.0</version.datus>
+        <version.remap>4.2.5</version.remap>
+        <version.junit>4.13</version.junit>
+        <version.slf4j>1.7.30</version.slf4j>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <javac.target>1.8</javac.target>
@@ -102,6 +103,12 @@
             <groupId>com.googlecode.jmapper-framework</groupId>
             <artifactId>jmapper-core</artifactId>
             <version>${version.jmapper}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.remondis</groupId>
+            <artifactId>remap</artifactId>
+            <version>${version.remap}</version>
         </dependency>
 
         <dependency>

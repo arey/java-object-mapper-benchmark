@@ -1,6 +1,5 @@
-package com.javaetmoi.benchmark.mapping.mapper.dozer;
+package com.javaetmoi.benchmark.mapping.mapper;
 
-import com.javaetmoi.benchmark.mapping.mapper.OrderMapper;
 import com.javaetmoi.benchmark.mapping.mapper.datus.DatusMapper;
 
 public class DatusMapperTest extends AbstractMapperTest {
