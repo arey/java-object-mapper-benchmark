@@ -28,7 +28,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        mapper: [Manual, MapStruct, Selma, JMapper, datus, Orika, ModelMapper, BULL, Dozer]
+        mapper: [Manual, MapStruct, Selma, JMapper, datus, Orika, ModelMapper, BULL, Dozer, ReMap]
     steps:
       - uses: actions/checkout@master
       - name: 'Set up JDK 8'
