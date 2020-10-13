@@ -24,7 +24,7 @@
         <version.bull>1.7.2-jdk8</version.bull>
         <version.datus>1.5.0</version.datus>
         <version.remap>4.2.5</version.remap>
-        <version.junit>4.13</version.junit>
+        <version.junit>4.13.1</version.junit>
         <version.slf4j>1.7.30</version.slf4j>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
