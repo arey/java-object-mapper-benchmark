@@ -1,13 +1,12 @@
 package com.javaetmoi.benchmark.mapping.mapper;
 
 
-import com.javaetmoi.benchmark.mapping.mapper.OrderMapper;
 import com.javaetmoi.benchmark.mapping.model.dto.OrderDTO;
 import com.javaetmoi.benchmark.mapping.model.entity.Order;
 import com.javaetmoi.benchmark.mapping.model.entity.OrderFactory;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 
 public abstract class AbstractMapperTest {
 
