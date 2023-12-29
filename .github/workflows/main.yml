@@ -55,7 +55,6 @@ jobs:
       - uses: actions/download-artifact@v4
         name: Download benchmarks
         with:
-          path: benchmark_results
           pattern: benchmark_results_*
           merge-multiple: true
       - shell: bash
