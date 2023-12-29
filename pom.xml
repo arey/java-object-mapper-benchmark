@@ -15,17 +15,17 @@
 
     <properties>
         <version.orika>1.5.4</version.orika>
-        <version.dozer>6.5.0</version.dozer>
-        <version.modelmapper>2.3.8</version.modelmapper>
-        <version.mapstruct>1.4.0.CR1</version.mapstruct>
+        <version.dozer>6.5.2</version.dozer>
+        <version.modelmapper>3.2.0</version.modelmapper>
+        <version.mapstruct>1.5.5.Final</version.mapstruct>
         <version.selma>1.0</version.selma>
         <version.jmapper>1.6.1.CR2</version.jmapper>
-        <version.jmh>1.25.2</version.jmh>
-        <version.bull>1.7.2-jdk8</version.bull>
+        <version.jmh>1.37</version.jmh>
+        <version.bull>1.7.3-jdk8</version.bull>
         <version.datus>1.5.0</version.datus>
-        <version.remap>4.2.5</version.remap>
+        <version.remap>4.3.2</version.remap>
         <version.junit>4.13.2</version.junit>
-        <version.slf4j>1.7.30</version.slf4j>
+        <version.slf4j>2.0.9</version.slf4j>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <javac.target>1.8</javac.target>
