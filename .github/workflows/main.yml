@@ -41,10 +41,10 @@ jobs:
       - name: 'Benchmark'
         shell: bash
         run: java -jar target/benchmarks.jar -p type=${{ matrix.mapper }} -rff results_${{ matrix.mapper }}.csv -rf csv
-      - uses: actions/upload-artifact@master
+      - uses: actions/upload-artifact@v3
         name: Upload Benchmark Results
         with:
-          name: benchmark_results_${{ matrix.mapper }}
+          name: benchmark_results
           path: results_${{ matrix.mapper }}.csv
   collect_benchmark:
     name: Collect benchmarks
