@@ -14,7 +14,7 @@ jobs:
     name: 'Linux (JDK 8)'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@v4.1.1
       - name: 'Set up JDK 8'
         uses: actions/setup-java@v1
         with:
@@ -30,7 +30,7 @@ jobs:
       matrix:
         mapper: [Manual, MapStruct, Selma, JMapper, datus, Orika, ModelMapper, BULL, Dozer, ReMap]
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@v4.1.1
       - name: 'Set up JDK 8'
         uses: actions/setup-java@v1
         with:
@@ -41,28 +41,30 @@ jobs:
       - name: 'Benchmark'
         shell: bash
         run: java -jar target/benchmarks.jar -p type=${{ matrix.mapper }} -rff results_${{ matrix.mapper }}.csv -rf csv
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         name: Upload Benchmark Results
         with:
-          name: benchmark_results
+          name: benchmark_results_${{ matrix.mapper }}
           path: results_${{ matrix.mapper }}.csv
   collect_benchmark:
     name: Collect benchmarks
     needs: benchmark
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
-      - uses: actions/download-artifact@master
+      - uses: actions/checkout@v4.1.1
+      - uses: actions/download-artifact@v4
         name: Download benchmarks
         with:
-          name: benchmark_results
+          path: benchmark_results
+          pattern: benchmark_results_*
+          merge-multiple: true
       - shell: bash
         name: Prepare CSV Results
         run: |
           head -1 results_Manual.csv > results.csv
           for mapper in Manual MapStruct Selma JMapper datus Orika ModelMapper BULL Dozer ReMap; do sed 1d results_${mapper}.csv >> results.csv; done
           less results.csv
-      - uses: actions/upload-artifact@master
+      - uses: actions/upload-artifact@v4
         name: Upload CSV Results
         with:
           name: results
@@ -76,7 +78,7 @@ jobs:
         name: Plot Results
         run: |
           gnuplot -c benchmark.plt
-      - uses: actions/upload-artifact@master
+      - uses: actions/upload-artifact@v4
         name: Upload Plot
         with:
           name: results
