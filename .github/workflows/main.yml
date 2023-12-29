@@ -66,7 +66,7 @@ jobs:
       - uses: actions/upload-artifact@v4
         name: Upload CSV Results
         with:
-          name: results
+          name: results-csv
           path: results.csv
       - shell: bash
         name: Install gnuplot
@@ -80,5 +80,5 @@ jobs:
       - uses: actions/upload-artifact@v4
         name: Upload Plot
         with:
-          name: results
+          name: results-plot
           path: results.png
