@@ -52,7 +52,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4.1.1
-      - uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@v4.1.8
         name: Download benchmarks
         with:
           pattern: benchmark_results_*
