@@ -43,7 +43,7 @@ It includes combinations which usually appear in Java Beans, such as:
 
 ## Launch the benchmark
 
-_Pre-requisites: Maven 3.x and a JDK 8 (or above)_
+_Pre-requisites: Maven 3.x and a JDK 17 (or above)_
 
 ``git clone git://github.com/arey/java-object-mapper-benchmark.git``
 

@@ -14,9 +14,9 @@
     </prerequisites>
 
     <properties>
-        <version.orika>1.5.4</version.orika>
-        <version.dozer>6.5.2</version.dozer>
-        <version.modelmapper>3.2.0</version.modelmapper>
+        <version.orika>1.6.0</version.orika>
+        <version.dozer>7.0.0</version.dozer>
+        <version.modelmapper>3.2.6</version.modelmapper>
         <version.mapstruct>1.6.3</version.mapstruct>
         <version.selma>1.0</version.selma>
         <version.jmapper>1.6.1.CR2</version.jmapper>
@@ -26,13 +26,19 @@
         <version.remap>4.3.2</version.remap>
         <version.junit>5.9.2</version.junit>
         <version.slf4j>2.0.9</version.slf4j>
+        <jakarta.el-api.version>4.0.0</jakarta.el-api.version> <!-- Required by Dozer -->
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <java.version>1.8</java.version>
+        <java.version>17</java.version>
         <uberjar.name>benchmarks</uberjar.name>
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>jakarta.el</groupId>
+            <artifactId>jakarta.el-api</artifactId>
+            <version>${jakarta.el-api.version}</version>
+        </dependency>
         <dependency>
             <groupId>org.openjdk.jmh</groupId>
             <artifactId>jmh-core</artifactId>
@@ -46,7 +52,7 @@
         </dependency>
 
         <dependency>
-            <groupId>ma.glasnost.orika</groupId>
+            <groupId>io.github.vincentnull</groupId>
             <artifactId>orika-core</artifactId>
             <version>${version.orika}</version>
         </dependency>
@@ -221,6 +227,16 @@
                 <plugin>
                     <artifactId>maven-surefire-plugin</artifactId>
                     <version>3.2.3</version>
+                    <configuration>
+                        <!-- Enable JMapper to support Java 17 -->
+                        <argLine>
+                            --add-opens java.base/java.util=ALL-UNNAMED
+                            --add-opens java.base/java.lang=ALL-UNNAMED
+                            --add-opens java.base/java.lang.reflect=ALL-UNNAMED
+                            --add-opens java.base/java.text=ALL-UNNAMED
+                            --add-opens java.desktop/java.awt.font=ALL-UNNAMED
+                        </argLine>
+                    </configuration>
                 </plugin>
             </plugins>
         </pluginManagement>
