@@ -10,7 +10,7 @@
     <name>JMH benchmark of Object-to-Object mapping frameworks/</name>
 
     <prerequisites>
-        <maven>3.0</maven>
+        <maven>3.9</maven>
     </prerequisites>
 
     <properties>
