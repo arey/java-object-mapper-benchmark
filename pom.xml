@@ -24,7 +24,7 @@
         <version.bull>3.0.4</version.bull>
         <version.datus>1.5.0</version.datus>
         <version.remap>4.3.2</version.remap>
-        <version.junit>5.9.2</version.junit>
+        <version.junit>6.1.0</version.junit>
         <version.slf4j>2.0.9</version.slf4j>
         <jakarta.el-api.version>4.0.0</jakarta.el-api.version> <!-- Required by Dozer -->
 
