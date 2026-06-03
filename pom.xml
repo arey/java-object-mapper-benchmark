@@ -21,7 +21,7 @@
         <version.selma>1.0</version.selma>
         <version.jmapper>1.6.1.CR2</version.jmapper>
         <version.jmh>1.37</version.jmh>
-        <version.bull>1.7.3-jdk8</version.bull>
+        <version.bull>3.0.4</version.bull>
         <version.datus>1.5.0</version.datus>
         <version.remap>4.3.2</version.remap>
         <version.junit>5.9.2</version.junit>
@@ -87,7 +87,7 @@
         </dependency>
 
         <dependency>
-            <groupId>com.hotels.beans</groupId>
+            <groupId>com.expediagroup.beans</groupId>
             <artifactId>bull-bean-transformer</artifactId>
             <version>${version.bull}</version>
         </dependency>

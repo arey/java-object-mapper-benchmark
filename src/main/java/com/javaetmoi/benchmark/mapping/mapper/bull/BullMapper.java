@@ -1,8 +1,8 @@
 package com.javaetmoi.benchmark.mapping.mapper.bull;
 
-import com.hotels.beans.BeanUtils;
-import com.hotels.beans.transformer.BeanTransformer;
-import com.hotels.transformer.model.FieldMapping;
+import com.expediagroup.beans.BeanUtils;
+import com.expediagroup.beans.transformer.BeanTransformer;
+import com.expediagroup.transformer.model.FieldMapping;
 import com.javaetmoi.benchmark.mapping.mapper.OrderMapper;
 import com.javaetmoi.benchmark.mapping.model.dto.OrderDTO;
 import com.javaetmoi.benchmark.mapping.model.entity.Order;
