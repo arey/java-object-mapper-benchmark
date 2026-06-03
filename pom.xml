@@ -17,7 +17,7 @@
         <version.orika>1.5.4</version.orika>
         <version.dozer>6.5.2</version.dozer>
         <version.modelmapper>3.2.0</version.modelmapper>
-        <version.mapstruct>1.5.5.Final</version.mapstruct>
+        <version.mapstruct>1.6.3</version.mapstruct>
         <version.selma>1.0</version.selma>
         <version.jmapper>1.6.1.CR2</version.jmapper>
         <version.jmh>1.37</version.jmh>
