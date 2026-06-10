@@ -34,7 +34,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        mapper: [Manual, MapStruct, Selma, JMapper, datus, Orika, ModelMapper, BULL, Dozer, ReMap]
+        mapper: [Manual, MapStruct, Selma, JMapper, datus, Orika, ModelMapper, BULL, Dozer, ReMap, SJF4J]
     steps:
       - uses: actions/checkout@v4.1.1
       - name: Set up JDK ${{ env.JAVA_VERSION }}
@@ -69,7 +69,7 @@ jobs:
         name: Prepare CSV Results
         run: |
           head -1 results_Manual.csv > results.csv
-          for mapper in Manual MapStruct Selma JMapper datus Orika ModelMapper BULL Dozer ReMap; do sed 1d results_${mapper}.csv >> results.csv; done
+          for mapper in Manual MapStruct Selma JMapper datus Orika ModelMapper BULL Dozer ReMap SJF4J; do sed 1d results_${mapper}.csv >> results.csv; done
           less results.csv
       - uses: actions/upload-artifact@v4
         name: Upload CSV Results

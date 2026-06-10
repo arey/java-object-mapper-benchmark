@@ -21,6 +21,7 @@ JMH is developed by the OpenJDK team.
 - [BULL](https://github.com/HotelsDotCom/bull)
 - [datus](https://github.com/roookeee/datus)
 - [ReMap](https://github.com/remondis-it/remap)
+- [SJF4J](https://sjf4j.org/)
 
 ## Contributing to benchmark
 

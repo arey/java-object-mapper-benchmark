@@ -24,6 +24,7 @@
         <version.bull>3.0.4</version.bull>
         <version.datus>1.5.0</version.datus>
         <version.remap>4.3.7</version.remap>
+        <version.sjf4j>1.3.1</version.sjf4j>
         <version.junit>6.1.0</version.junit>
         <version.slf4j>2.0.9</version.slf4j>
         <jakarta.el-api.version>4.0.0</jakarta.el-api.version> <!-- Required by Dozer -->
@@ -115,6 +116,17 @@
             <groupId>com.remondis</groupId>
             <artifactId>remap</artifactId>
             <version>${version.remap}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.sjf4j</groupId>
+            <artifactId>sjf4j</artifactId>
+            <version>${version.sjf4j}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.sjf4j</groupId>
+            <artifactId>sjf4j-processor</artifactId>
+            <version>${version.sjf4j}</version>
         </dependency>
 
         <dependency>

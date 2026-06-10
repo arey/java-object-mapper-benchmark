@@ -11,6 +11,7 @@ import com.javaetmoi.benchmark.mapping.mapper.modelmapper.ModelMapper;
 import com.javaetmoi.benchmark.mapping.mapper.orika.OrikaMapper;
 import com.javaetmoi.benchmark.mapping.mapper.remappe.ReMappeMapper;
 import com.javaetmoi.benchmark.mapping.mapper.selma.SelmaMapper;
+import com.javaetmoi.benchmark.mapping.mapper.sjf4j.Sjf4jMapper;
 import com.javaetmoi.benchmark.mapping.model.dto.OrderDTO;
 import com.javaetmoi.benchmark.mapping.model.entity.Order;
 import com.javaetmoi.benchmark.mapping.model.entity.OrderFactory;
@@ -27,7 +28,7 @@ import java.util.Collection;
 @State(Scope.Benchmark)
 public class MapperBenchmark {
 
-    @Param({"Manual", "MapStruct", "Selma", "JMapper", "datus", "Orika", "ModelMapper", "BULL", "Dozer", "ReMap"})
+    @Param({"Manual", "MapStruct", "Selma", "JMapper", "datus", "Orika", "ModelMapper", "BULL", "Dozer", "ReMap", "SJF4J"})
     private String type;
 
     private OrderMapper mapper;
@@ -65,6 +66,9 @@ public class MapperBenchmark {
                 break;
             case "ReMap":
                 mapper = new ReMappeMapper();
+                break;
+            case "SJF4J":
+                mapper = new Sjf4jMapper();
                 break;
             default:
                 throw new IllegalStateException("Unknown type: " + type);
