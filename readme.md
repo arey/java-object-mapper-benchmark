@@ -1,14 +1,15 @@
 # Object-to-object mapping framework microbenchmark
+
 ![CI](https://github.com/arey/java-object-mapper-benchmark/workflows/CI/badge.svg)
 
-Multi-layered applications often require to map between different object models (e.g. DTOs and entities). 
+Multi-layered applications often require to map between different object models (e.g. DTOs and entities).
 Writing such boiler plate mapping code is a tedious and error-prone task.
 A lot of object-to-object mapping Java frameworks aims to simplify this work and automate it.
 Some uses code instrospection (eg. Dozer). Other uses code generation (ex: MapStruct).
-This micro-benchmark compares performance of 9 frameworks. Results could be compared to the benchmark of a code written manually. 
+This micro-benchmark compares performance of 9 frameworks. Results could be compared to the benchmark of a code written manually.
 
 Benchmark are powered by a tool called [JMH](http://openjdk.java.net/projects/code-tools/jmh/) or also known as "Java Microbenchmarking Harness".
-JMH is developed by the OpenJDK team. 
+JMH is developed by the OpenJDK team.
 
 ## Benchmarked object to object mapper frameworks
 
@@ -25,12 +26,13 @@ JMH is developed by the OpenJDK team.
 
 ## Contributing to benchmark
 
-
-Github is for social coding platform: if you want to add another mapping framework or optimize an existing one, we encourage contributions 
+Github is for social coding platform: if you want to add another mapping framework or optimize an existing one, we
+encourage contributions
 through pull requests from [forks of this repository](http://help.github.com/forking/).
-If you want to contribute code this way, please reference a GitHub ticket as well covering the specific issue you are addressing.
-To add a new mapper, please add a unit test that extends the `AbstractMapperTest` class and declare your mapper into the `MapperBenchmark` class. 
-
+If you want to contribute code this way, please reference a GitHub ticket as well covering the specific issue you are
+addressing.
+To add a new mapper, please add a unit test that extends the `AbstractMapperTest` class and declare your mapper into the
+`MapperBenchmark` class.
 
 ## Data model
 
@@ -50,9 +52,10 @@ _Pre-requisites: Maven 3.x and a JDK 17 (or above)_
 
 ``mvn clean install``
 
-``java -jar target/benchmarks.jar``
+``java @jvm.options -jar target/benchmarks.jar``
 
-Optional: To run a single benchmark, such as MapStruct, use `java -jar target/benchmarks.jar -p type=MapStruct`
+Optional: To run a single benchmark, such as MapStruct, use
+`java @jvm.options -jar target/benchmarks.jar -p type=MapStruct`
 
 ## Interpreting the Results
 
@@ -63,26 +66,26 @@ Generally, the score represents the number of graph object mapped per second; th
 
 Tests has been performed on:
 
-* OS: macOS High Sierra
-* CPU: 3.1 GHz Intel Core i7, 2 cores, L2 Cache (per Core): 256 KB,  L3 Cache: 4 MB
-* RAM: 16 GB 1867 MHz DDR3
-* JVM: Oracle 1.8.0_74-b02 64 bits
+* OS: macOS Tahoe 26.5
+* CPU: Apple M4 Pro
+* RAM: 24 GB
+* JVM: Eclipse Temurin 21.0.5+11
 
-| Benchmark      | Mode  | Samples | Score       | Margin error (+/-) | Units |
-|----------------|-------|---------|-------------|--------------------|-------|
-| Manual         | thrpt | 200     | 26 978 437  | 615 002            | ops/s |
-| MapStruct      | thrpt | 200     | 28 039 597  | 199 255            | ops/s |
-| Selma          | thrpt | 200     | 27 518 789  | 238 602            | ops/s |
-| JMapper        | thrpt | 200     | 24 531 754  | 123 945            | ops/s |
-| Orika          | thrpt | 200     |  4 565 378  |  24 947            | ops/s |
-| ModelMapper    | thrpt | 200     |    184 304  |  12 777            | ops/s |
-| Dozer          | thrpt | 200     |     89 860  |     462            | ops/s |
-| BULL           | thrpt | 200     |    178 027  |     679            | ops/s |
-| datus          | thrpt | 200     |  8 230 775  |  59 673            | ops/s |
-
+| Benchmark   | Mode  | Samples | Score      | Score Error (99,9%) | Units |
+|-------------|-------|---------|------------|---------------------|-------|
+| Manual      | thrpt | 200     | 98 433 829 | 560 874             | ops/s |
+| SJF4J       | thrpt | 200     | 96 845 484 | 1 137 711           | ops/s |
+| MapStruct   | thrpt | 200     | 94 501 314 | 1 153 765           | ops/s |
+| Selma       | thrpt | 200     | 92 624 594 | 1 032 208           | ops/s |
+| JMapper     | thrpt | 200     | 83 623 847 | 404 936             | ops/s |
+| datus       | thrpt | 200     | 33 690 856 | 863 388             | ops/s |
+| Orika       | thrpt | 200     | 15 488 089 | 385 665             | ops/s |
+| ReMap       | thrpt | 200     | 2 020 680  | 127 259             | ops/s |
+| ModelMapper | thrpt | 200     | 451 548    | 7 450               | ops/s |
+| BULL        | thrpt | 200     | 387 895    | 6 636               | ops/s |
+| Dozer       | thrpt | 200     | 333 334    | 10 383              | ops/s |
 
 ![Framework Comparison](results.png)
-
 
 ## Documentation
 
@@ -90,7 +93,7 @@ Tests has been performed on:
 
 ## Generating plot
 
-1. Run benchmark while exporting results to csv with `java -jar target/benchmarks.jar -rff results.csv -rf csv`
+1. Run benchmark while exporting results to csv with `java @jvm.options -jar target/benchmarks.jar -rff results.csv -rf csv`
 2. Use gnuplot to generate plot with `gnuplot benchmark.plt`. This will output `results.png`.
 
 ## Credits
